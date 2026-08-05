@@ -1,0 +1,68 @@
+@import "tailwindcss";
+
+/* ─── Design Tokens via Tailwind v4 CSS theme ─── */
+@theme {
+  --color-primary: var(--theme-primary);
+  --color-primary-dark: var(--theme-primary-dark);
+  --color-primary-light: var(--theme-primary-light);
+  --color-secondary: var(--theme-secondary);
+  --color-accent: var(--theme-accent);
+
+  --color-dark: #222222;
+  --color-gray-text: #666666;
+  --color-gray-light: #f8f9fa;
+  --color-white: #ffffff;
+  --color-overlay: rgba(0, 0, 0, 0.6);
+  --color-overlay-light: rgba(0, 0, 0, 0.4);
+
+  --font-heading: var(--theme-font);
+  --font-body: var(--theme-font);
+}
+
+/* ─── Base Styles ─── */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body, "Roboto", sans-serif);
+  color: var(--color-dark);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ─── Scroll Animation Utility ─── */
+.scroll-hidden {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.scroll-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ─── Custom Scrollbar ─── */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-gray-light);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-primary);
+  border-radius: 4px;
+}
+
+/* ─── Testimonial Carousel snapping ─── */
+.testimonial-track {
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+
+.testimonial-track>* {
+  scroll-snap-align: start;
+}
