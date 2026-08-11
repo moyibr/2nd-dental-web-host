@@ -1,8 +1,8 @@
 #!/usr/bin/env node
-// scripts/inject-meta.mjs
+// frontend/scripts/inject-meta.mjs
 // -----------------------------------------------------------------------------
 // Prebuild step (wired into `npm run build`). Stamps index.html, public/robots.txt,
-// and public/sitemap.xml from config/clinic.config.json — so a new client never
+// and public/sitemap.xml from /config/clinic.config.json — so a new client never
 // requires hand-editing any of those three files, only the config.
 // -----------------------------------------------------------------------------
 import fs from 'node:fs';
@@ -10,9 +10,10 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const root = path.resolve(__dirname, '..');
+const frontendRoot = path.resolve(__dirname, '..');       // /frontend — where index.html/public/ live
+const monorepoRoot = path.resolve(__dirname, '../..');    // repo root — where /config lives (shared with /backend)
 
-const config = JSON.parse(fs.readFileSync(path.join(root, 'config/clinic.config.json'), 'utf-8'));
+const config = JSON.parse(fs.readFileSync(path.join(monorepoRoot, 'config/clinic.config.json'), 'utf-8'));
 const { business, contact, hours, seo, trust } = config;
 
 function escapeHtml(str = '') {
@@ -77,7 +78,7 @@ function buildHeadBlock() {
 }
 
 function stampIndexHtml() {
-    const indexPath = path.join(root, 'index.html');
+    const indexPath = path.join(frontendRoot, 'index.html');
     const html = fs.readFileSync(indexPath, 'utf-8');
     const startMarker = '<!--SEO_HEAD_START-->';
     const endMarker = '<!--SEO_HEAD_END-->';
@@ -100,7 +101,7 @@ function writeRobotsTxt() {
         'Allow: /',
         siteUrl && `Sitemap: ${siteUrl.replace(/\/$/, '')}/sitemap.xml`,
     ].filter(Boolean).join('\n') + '\n';
-    fs.writeFileSync(path.join(root, 'public/robots.txt'), content);
+    fs.writeFileSync(path.join(frontendRoot, 'public/robots.txt'), content);
     console.log('[inject-meta] Wrote public/robots.txt');
 }
 
@@ -123,7 +124,7 @@ function writeSitemapXml() {
   </url>
 </urlset>
 `;
-    fs.writeFileSync(path.join(root, 'public/sitemap.xml'), xml);
+    fs.writeFileSync(path.join(frontendRoot, 'public/sitemap.xml'), xml);
     console.log('[inject-meta] Wrote public/sitemap.xml');
 }
 

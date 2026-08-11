@@ -1,19 +1,26 @@
-// src/config.js
+// frontend/src/config.js
 // -----------------------------------------------------------------------------
 // CONFIG LOADER
 // -----------------------------------------------------------------------------
-// The ONLY file that should ever import `config/clinic.config.json` directly.
+// The ONLY file that should ever import `/config/clinic.config.json` directly.
 // Every component imports `config` (or the named helpers) from here instead —
 // this keeps the raw JSON shape in one place and gives us a spot to validate
 // it and compute small derived values (tel:/wa.me links, font resolution,
 // feature-flag lookups) without repeating that logic across components.
 //
-// To onboard a new client: edit `config/clinic.config.json` (start from
-// `config/clinic.config.template.json`). Nothing in this file should ever
+// Note: /config lives at the REPO ROOT (a sibling of /frontend and /backend),
+// not inside /frontend — it's shared client data, not frontend code. The
+// backend reads the same file independently (server/middleware/validate.js,
+// server/mailer.js) to build its service allow-list and notification email.
+// This is the one deliberate exception to "frontend and backend don't share
+// files": one shared *data* source beats two configs that can drift apart.
+//
+// To onboard a new client: edit `/config/clinic.config.json` (start from
+// `/config/clinic.config.template.json`). Nothing in this file should ever
 // need to change per client.
 // -----------------------------------------------------------------------------
 
-import rawConfig from '../config/clinic.config.json';
+import rawConfig from '../../config/clinic.config.json';
 import { resolveFont } from './theme/fonts.js';
 
 // Fields a client config must have for the site to render sensibly. Missing

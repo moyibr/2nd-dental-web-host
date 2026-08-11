@@ -1,7 +1,8 @@
 // validate — Server-side validation & sanitization for POST /api/appointments.
 // Never trust the client: this re-checks everything the frontend already
 // validated, independently. The `service` field is checked against an
-// allow-list read straight from ../config/clinic.config.json, so it can
+// allow-list read straight from /config/clinic.config.json (repo root,
+// shared with /frontend — see that file's config.js for why), so it can
 // never carry arbitrary/injected text — only one of the clinic's own
 // configured service names.
 import fs from 'node:fs';

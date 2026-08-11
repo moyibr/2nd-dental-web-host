@@ -20,8 +20,8 @@ client doesn't hit the same wall).
       to forget since nothing breaks visibly if it's wrong, it just quietly
       hurts SEO/social sharing.
 - [ ] Set `business.currency` to match the client's market (₹, $, £, ...).
-- [ ] Pick `theme.font` from the allow-list in `src/theme/fonts.js` — don't
-      paste an arbitrary Google Fonts URL into the config.
+- [ ] Pick `theme.font` from the allow-list in `frontend/src/theme/fonts.js`
+      — don't paste an arbitrary Google Fonts URL into the config.
 
 ## 2. Content honesty checks
 
@@ -41,7 +41,7 @@ client doesn't hit the same wall).
 
 ## 3. Images
 
-- [ ] Replace everything in `public/images/client/`: `logo.svg`,
+- [ ] Replace everything in `frontend/public/images/client/`: `logo.svg`,
       `favicon.svg`, `og-image.jpg` (1200×630), plus `hero/`, `doctors/`,
       `gallery/` as referenced in the config.
 - [ ] Keep files reasonably small (hero ≤ ~300KB, others ≤ ~150KB) — there's
@@ -60,31 +60,33 @@ decide deliberately (don't just leave the template defaults):
 - [ ] If a section is disabled, remove its entry from `navigation[]` too
       (so the menu doesn't link to a hidden section).
 
-## 5. Backend (`server/`)
+## 5. Backend (`backend/`)
 
-- [ ] `cd server && npm install`
+- [ ] `cd backend && npm install`
 - [ ] `cp .env.example .env` and fill in:
   - [ ] `CORS_ORIGIN` — the frontend's real production URL
   - [ ] `SMTP_HOST` / `SMTP_PORT` / `SMTP_USER` / `SMTP_PASS` / `SMTP_FROM`
         — real credentials for sending notification emails
   - [ ] `NOTIFY_EMAIL` — where appointment requests should land (defaults to
         `config.contact.email` if left blank)
-- [ ] Deploy `server/` to a Node host (Render, Railway, a VPS, etc.) — it's
+- [ ] Deploy `backend/` to a Node host (Render, Railway, a VPS, etc.) — it's
       a separate deployment from the frontend.
-- [ ] Set the frontend's `VITE_API_URL` (in `.env`, and in whatever env-var
-      UI your static host uses for the production build) to the deployed
-      backend's URL + `/api`.
+- [ ] Set the frontend's `VITE_API_URL` (in `frontend/.env`, and in whatever
+      env-var UI your static host uses for the production build) to the
+      deployed backend's URL + `/api`.
 
 ## 6. Pre-launch checks
 
-- [ ] `npm run dev` — click through every nav link, submit the appointment
-      form end to end (with the backend running), confirm the map loads.
+- [ ] `cd frontend && npm run dev` — click through every nav link, submit
+      the appointment form end to end (with the backend running), confirm
+      the map loads.
 - [ ] Resize to ~360px, ~768px, ~1024px, ~1440px — check for horizontal
       scroll and that the sticky mobile Call/WhatsApp/Book bar behaves.
-- [ ] `npm run build` — confirm it completes without errors, and check the
-      generated `dist/index.html` has the client's real title/description
-      (not the placeholder), plus `public/robots.txt` and
-      `public/sitemap.xml` point at the real domain.
+- [ ] `npm run build` (in `frontend/`) — confirm it completes without
+      errors, and check the generated `frontend/dist/index.html` has the
+      client's real title/description (not the placeholder), plus
+      `frontend/public/robots.txt` and `frontend/public/sitemap.xml` point
+      at the real domain.
 - [ ] Test the `tel:` and `wa.me` links on an actual phone if possible.
 - [ ] Verify the JSON-LD (view page source → the `application/ld+json`
       script tag, or paste the live URL into Google's Rich Results Test)

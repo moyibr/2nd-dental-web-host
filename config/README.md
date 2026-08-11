@@ -1,8 +1,12 @@
 # `clinic.config.json` Field Reference
 
 This file is the **single source of truth** for everything that differs between
-clients. Nothing in `src/` should ever need to change to onboard a new clinic —
-you only edit this JSON file and swap images in `public/images/client/`.
+clients. It lives at the repo root (a sibling of `/frontend` and `/backend`,
+not inside either) because both apps read it — see the root
+[`README.md`](../README.md#why-config-is-shared-not-inside-frontend) for why.
+Nothing in `/frontend/src` or `/backend` should ever need to change to
+onboard a new clinic — you only edit this JSON file and swap images in
+`frontend/public/images/client/`.
 
 Start a new client by copying the template:
 
@@ -16,7 +20,8 @@ open while you edit.
 > **JSON syntax reminders:** every key and string value needs double quotes,
 > no trailing commas after the last item in an object/array, `null` (not
 > empty string) for "not applicable" numeric/optional fields. Run
-> `npm run build` after editing — it will fail loudly if the JSON is invalid.
+> `npm run build` (in `frontend/`) after editing — it will fail loudly if
+> the JSON is invalid.
 
 ---
 
@@ -26,7 +31,7 @@ open while you edit.
 | `name` | ✅ | Used in the title, footer, JSON-LD. |
 | `hindiName` | – | Optional local-language name, shown nowhere yet but kept for future use / local SEO keywords. |
 | `tagline` | ✅ | Short line shown under the name in `<title>` and TopBar. |
-| `logo` | ✅ | Path under `public/images/client/`, e.g. `/images/client/logo.svg`. |
+| `logo` | ✅ | Path under `frontend/public/images/client/`, e.g. `/images/client/logo.svg`. |
 | `favicon` | ✅ | Same as above. SVG or ICO. |
 | `ogImage` | ✅ | 1200×630 image used for social share previews (Open Graph). |
 | `currency` | ✅ | Symbol shown before prices in the pricing grid, e.g. `₹`, `$`, `£`. |
@@ -37,7 +42,7 @@ open while you edit.
 | `primaryColor` / `primaryDarkColor` / `primaryLightColor` | ✅ | Hex. Used for buttons, links, highlights. `Dark` = hover state, `Light` = tinted backgrounds. |
 | `secondaryColor` | ✅ | Dark color for the footer / dark sections. |
 | `accentColor` | ✅ | Used sparingly (badges, stars, ratings). |
-| `font` | ✅ | Must be one of the keys in `src/theme/fonts.js`: `Poppins`, `Roboto`, `Inter`, `Outfit`, `Nunito`, `Playfair Display`. Pick one that suits the brand (e.g. `Playfair Display` for an upscale/cosmetic clinic, `Nunito` for a friendly family practice). |
+| `font` | ✅ | Must be one of the keys in `frontend/src/theme/fonts.js`: `Poppins`, `Roboto`, `Inter`, `Outfit`, `Nunito`, `Playfair Display`. Pick one that suits the brand (e.g. `Playfair Display` for an upscale/cosmetic clinic, `Nunito` for a friendly family practice). |
 
 ## `contact`
 | Field | Required | Notes |
@@ -133,10 +138,10 @@ Only rendered when `featureFlags.showBlog` is `true`. `title`, `excerpt`, `date`
 
 ---
 
-## Images (`public/images/client/`)
+## Images (`frontend/public/images/client/`)
 Put every client-swappable image here — referenced by plain path in the JSON above (external `https://...` URLs also work if you don't have local files yet, e.g. temporary stock photos). Suggested layout:
 ```
-public/images/client/
+frontend/public/images/client/
   logo.svg
   favicon.svg
   og-image.jpg

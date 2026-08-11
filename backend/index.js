@@ -1,4 +1,4 @@
-// server/index.js — Minimal, least-privilege Express API for the appointment
+// backend/index.js — Minimal, least-privilege Express API for the appointment
 // form. Exposes exactly two routes: GET /health and POST /api/appointments.
 // Nothing else — no data reads, no admin routes, no persistence.
 import 'dotenv/config';
@@ -36,11 +36,11 @@ app.use((err, _req, res, _next) => {
         return res.status(403).json({ ok: false, message: 'Forbidden.' });
     }
     // eslint-disable-next-line no-console
-    console.error('[server] Unhandled error:', err.message);
+    console.error('[backend] Unhandled error:', err.message);
     res.status(500).json({ ok: false, message: 'Something went wrong.' });
 });
 
 app.listen(PORT, () => {
     // eslint-disable-next-line no-console
-    console.log(`[server] Appointments API listening on port ${PORT} (CORS: ${allowedOrigins.join(', ')})`);
+    console.log(`[backend] Appointments API listening on port ${PORT} (CORS: ${allowedOrigins.join(', ')})`);
 });

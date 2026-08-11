@@ -83,7 +83,7 @@ Send this to the client as-is, or read it out on an onboarding call.
       wait on this to start building, since `theme.*` is a five-minute
       change at the end.
 - [ ] Font preference, if any — otherwise pick from the allow-list in
-      `src/theme/fonts.js` based on the clinic's positioning (e.g.
+      `frontend/src/theme/fonts.js` based on the clinic's positioning (e.g.
       `Playfair Display` for upscale/cosmetic, `Nunito` for a friendly
       family practice).
 
@@ -131,6 +131,6 @@ timeline — #1 is meaningfully more work than #2 or #3.
 
 1. `cp config/clinic.config.template.json config/clinic.config.json`
 2. Fill it in using `config/README.md` as the field reference
-3. Drop images into `public/images/client/`
+3. Drop images into `frontend/public/images/client/`
 4. Follow [`ONBOARDING_CHECKLIST.md`](ONBOARDING_CHECKLIST.md) for the
    rest of the build → deploy flow
