@@ -1,13 +1,13 @@
 // TestimonialsCarousel — Horizontally scrollable testimonial card strip
 import { useRef } from 'react';
-import { clinicConfig } from '../config/clinicConfig';
+import { config } from '../config.js';
 import TestimonialCard from './TestimonialCard';
 import useScrollAnimation from '../hooks/useScrollAnimation';
 
 export default function TestimonialsCarousel() {
   const trackRef = useRef(null);
   const sectionRef = useScrollAnimation();
-  const { testimonials } = clinicConfig;
+  const { testimonials } = config;
 
   const scroll = (dir) => {
     if (trackRef.current) {
@@ -18,27 +18,27 @@ export default function TestimonialsCarousel() {
   return (
     <div ref={sectionRef} className="scroll-hidden">
       {/* Navigation Arrows */}
-      <div className="flex justify-end gap-2 mb-6">
+      <div className="hidden sm:flex justify-end gap-2 mb-6">
         <button
           onClick={() => scroll(-1)}
           aria-label="Previous testimonials"
-          className="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center text-gray-500 hover:bg-primary hover:text-white hover:border-primary transition-colors"
+          className="w-11 h-11 rounded-full border border-gray-200 flex items-center justify-center text-gray-500 hover:bg-primary hover:text-white hover:border-primary transition-colors"
         >
           ←
         </button>
         <button
           onClick={() => scroll(1)}
           aria-label="Next testimonials"
-          className="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center text-gray-500 hover:bg-primary hover:text-white hover:border-primary transition-colors"
+          className="w-11 h-11 rounded-full border border-gray-200 flex items-center justify-center text-gray-500 hover:bg-primary hover:text-white hover:border-primary transition-colors"
         >
           →
         </button>
       </div>
 
-      {/* Scrollable Track */}
+      {/* Scrollable Track — swipeable on touch devices, arrows are a sm+ enhancement */}
       <div
         ref={trackRef}
-        className="testimonial-track flex gap-6 overflow-x-auto pb-4 scrollbar-hide"
+        className="testimonial-track flex gap-4 sm:gap-6 overflow-x-auto pb-4 scrollbar-hide -mx-4 px-4 sm:mx-0 sm:px-0"
         style={{ scrollbarWidth: 'none' }}
       >
         {testimonials.map((t) => (

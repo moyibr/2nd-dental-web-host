@@ -1,0 +1,142 @@
+{
+  "business": {
+    "name": "Client Dental Clinic Name",
+    "hindiName": "",
+    "tagline": "A short, benefit-driven tagline",
+    "logo": "/images/client/logo.svg",
+    "favicon": "/images/client/favicon.svg",
+    "ogImage": "/images/client/og-image.jpg",
+    "currency": "₹"
+  },
+  "theme": {
+    "primaryColor": "#0E7C7B",
+    "primaryDarkColor": "#0A5F5E",
+    "primaryLightColor": "#E4F5F4",
+    "secondaryColor": "#0B1E2A",
+    "accentColor": "#C9A227",
+    "font": "Poppins"
+  },
+  "contact": {
+    "phoneDisplay": "+91 00000 00000",
+    "phoneDial": "+910000000000",
+    "whatsappNumber": "910000000000",
+    "whatsappPresetMessage": "Hi, I would like to book a dental appointment.",
+    "email": "info@clientclinic.com",
+    "address": {
+      "line1": "Street address line 1",
+      "line2": "Landmark / area",
+      "city": "City",
+      "state": "State",
+      "postalCode": "000000",
+      "country": "IN"
+    },
+    "plusCode": "",
+    "geo": { "lat": null, "lng": null },
+    "mapEmbedUrl": "https://www.google.com/maps?q=REPLACE_WITH_ADDRESS_OR_PLUS_CODE&output=embed",
+    "directionsUrl": "https://www.google.com/maps/search/?api=1&query=REPLACE_WITH_ADDRESS"
+  },
+  "hours": [
+    { "day": "Monday", "open": "10:00", "close": "19:00", "closed": false },
+    { "day": "Tuesday", "open": "10:00", "close": "19:00", "closed": false },
+    { "day": "Wednesday", "open": "10:00", "close": "19:00", "closed": false },
+    { "day": "Thursday", "open": "10:00", "close": "19:00", "closed": false },
+    { "day": "Friday", "open": "10:00", "close": "19:00", "closed": false },
+    { "day": "Saturday", "open": "10:00", "close": "19:00", "closed": false },
+    { "day": "Sunday", "open": "10:00", "close": "19:00", "closed": true }
+  ],
+  "socials": {
+    "facebook": "",
+    "instagram": "",
+    "twitter": "",
+    "youtube": ""
+  },
+  "seo": {
+    "title": "Client Dental Clinic Name — Best Dental Clinic in [City]",
+    "description": "One or two sentences describing the clinic, its specialties, and location for search results.",
+    "keywords": ["dental clinic [city]", "best dentist [city]"],
+    "siteUrl": "https://www.clientclinic.com"
+  },
+  "featureFlags": {
+    "showPricing": true,
+    "showBlog": false,
+    "showBeforeAfter": false,
+    "showGallery": true,
+    "showInsurance": false,
+    "showFAQ": true,
+    "showTestimonials": true,
+    "enableOnlineBooking": true
+  },
+  "trust": {
+    "rating": null,
+    "reviewCount": null,
+    "googleMapsReviewUrl": ""
+  },
+  "hero": {
+    "slides": [
+      {
+        "id": 1,
+        "imageMobile": "/images/client/hero/slide-1-mobile.jpg",
+        "imageDesktop": "/images/client/hero/slide-1-desktop.jpg",
+        "heading": "Headline for the first hero slide",
+        "subheading": "Supporting sentence for the first hero slide.",
+        "cta1": { "text": "See Our Services", "href": "#services" },
+        "cta2": { "text": "Book Appointment", "href": "#contact" }
+      }
+    ]
+  },
+  "ctaBanner": {
+    "image": "/images/client/cta-banner.jpg",
+    "heading": "Don't Wait — Book Your Visit Today!",
+    "buttonText": "Book Appointment",
+    "buttonLink": "#contact"
+  },
+  "highlights": [
+    { "id": 1, "icon": "📅", "title": "Highlight title", "description": "Highlight description." }
+  ],
+  "services": [
+    { "id": 1, "icon": "🦷", "title": "Service name", "description": "Service description.", "price": null }
+  ],
+  "about": {
+    "image": "/images/client/about.jpg",
+    "heading": "About section heading",
+    "description": "About section paragraph.",
+    "stats": [
+      { "icon": "📅", "target": 0, "caption": "Stat caption" }
+    ]
+  },
+  "team": [
+    { "id": 1, "name": "Dr. Full Name", "qualification": "BDS, MDS", "specialization": "Specialization", "bio": "Short bio.", "photo": "/images/client/doctors/1.jpg", "socials": {} }
+  ],
+  "testimonials": [
+    { "id": 1, "name": "Patient Name", "quote": "Testimonial quote.", "source": "Google Review", "date": "", "avatar": null }
+  ],
+  "gallery": [
+    { "id": 1, "image": "/images/client/gallery/1.jpg", "caption": "Caption" }
+  ],
+  "faq": [
+    { "id": 1, "question": "Frequently asked question?", "answer": "Answer." }
+  ],
+  "pricing": {
+    "note": "*Starting prices shown for reference. Final cost depends on consultation and diagnosis.",
+    "plans": [
+      { "id": 1, "name": "Plan name", "price": "0", "features": ["Feature 1", "Feature 2"], "highlighted": false }
+    ]
+  },
+  "blog": [
+    { "id": 1, "title": "Post title", "excerpt": "Post excerpt.", "date": "", "author": "Clinic Team", "comments": 0, "image": "/images/client/blog/1.jpg" }
+  ],
+  "navigation": [
+    { "label": "Home", "href": "#home" },
+    { "label": "Services", "href": "#services" },
+    { "label": "About", "href": "#about" },
+    { "label": "Our Team", "href": "#doctors" },
+    { "label": "Reviews", "href": "#testimonials" },
+    { "label": "Pricing", "href": "#pricing" },
+    { "label": "FAQ", "href": "#faq" },
+    { "label": "Visit Us", "href": "#visit" }
+  ],
+  "footer": {
+    "aboutText": "Short footer description of the clinic.",
+    "copyrightText": "All rights reserved."
+  }
+}

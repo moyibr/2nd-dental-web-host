@@ -1,14 +1,14 @@
 // CTABanner — Full-width background banner with heading and CTA button
-import { clinicConfig } from '../config/clinicConfig';
+import { config } from '../config.js';
 
 export default function CTABanner() {
-  const { ctaBanner } = clinicConfig;
+  const { ctaBanner } = config;
 
   return (
-    <section className="relative py-20 overflow-hidden">
-      {/* Background */}
+    <section className="relative py-14 sm:py-20 overflow-hidden">
+      {/* Background — bg-fixed causes jank on mobile browsers, so only apply it from sm+ */}
       <div
-        className="absolute inset-0 bg-cover bg-center bg-fixed"
+        className="absolute inset-0 bg-cover bg-center sm:bg-fixed"
         style={{ backgroundImage: `url(${ctaBanner.image})` }}
       />
       <div className="absolute inset-0 bg-primary/80" />
@@ -23,7 +23,7 @@ export default function CTABanner() {
         </div>
         <a
           href={ctaBanner.buttonLink}
-          className="flex-shrink-0 px-10 py-4 bg-white text-primary font-bold rounded-full hover:bg-gray-100 transition-all shadow-xl text-sm"
+          className="inline-flex items-center justify-center flex-shrink-0 min-h-11 px-8 sm:px-10 py-4 bg-white text-primary font-bold rounded-full hover:bg-gray-100 transition-all shadow-xl text-sm"
         >
           {ctaBanner.buttonText}
         </a>

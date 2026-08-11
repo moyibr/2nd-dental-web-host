@@ -1,10 +1,10 @@
 // PricingCard — Plan name, price, features list, and CTA button
 import useScrollAnimation from '../hooks/useScrollAnimation';
-import { clinicConfig } from '../config/clinicConfig';
+import { config } from '../config.js';
 
 export default function PricingCard({ name, price, features, highlighted }) {
     const ref = useScrollAnimation();
-    const currency = clinicConfig.business.currency || '$';
+    const currency = config.business.currency || '$';
 
     return (
         <div
@@ -34,7 +34,7 @@ export default function PricingCard({ name, price, features, highlighted }) {
             </ul>
             <a
                 href="#contact"
-                className={`block w-full py-3.5 rounded-full font-semibold text-sm transition-all ${highlighted
+                className={`flex items-center justify-center min-h-11 w-full py-3.5 rounded-full font-semibold text-sm transition-all ${highlighted
                         ? 'bg-white text-primary hover:bg-gray-100'
                         : 'bg-primary text-white hover:bg-primary-dark'
                     }`}

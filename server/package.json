@@ -1,0 +1,19 @@
+{
+  "name": "dental-clinic-appointments-api",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Standalone reference backend for the dental clinic appointment form — validation, honeypot, rate-limiting, and email notification. Deploy separately from the static frontend.",
+  "scripts": {
+    "dev": "node --watch index.js",
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "express-rate-limit": "^7.4.0",
+    "nodemailer": "^9.0.5",
+    "validator": "^13.12.0"
+  }
+}
