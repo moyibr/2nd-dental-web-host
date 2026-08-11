@@ -10,6 +10,7 @@ import TestimonialsCarousel from '../components/TestimonialsCarousel';
 import ResultCard from '../components/ResultCard';
 import BlogCard from '../components/BlogCard';
 import PricingCard from '../components/PricingCard';
+import LocationMap from '../components/LocationMap';
 
 import { clinicConfig } from '../config/clinicConfig';
 import useScrollAnimation from '../hooks/useScrollAnimation';
@@ -31,7 +32,8 @@ export default function Home() {
         doctors,
         results,
         blog,
-        pricing
+        pricing,
+        pricingNote
     } = clinicConfig;
 
     return (
@@ -106,8 +108,8 @@ export default function Home() {
             <section id="doctors" className="py-16 md:py-24 bg-gray-light">
                 <div className="max-w-7xl mx-auto px-4">
                     <div ref={doctorsHeaderRef} className="scroll-hidden text-center mb-14">
-                        <span className="text-primary text-sm font-medium uppercase tracking-wider">Our Doctors</span>
-                        <h2 className="text-2xl md:text-3xl font-bold text-dark mt-2">Qualified Dentists</h2>
+                        <span className="text-primary text-sm font-medium uppercase tracking-wider">Our Team</span>
+                        <h2 className="text-2xl md:text-3xl font-bold text-dark mt-2">Experienced Dental Specialists</h2>
                     </div>
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
                         {doctors.map((d) => (
@@ -135,8 +137,8 @@ export default function Home() {
             <section className="py-16 md:py-24 bg-gray-light">
                 <div className="max-w-7xl mx-auto px-4">
                     <div ref={resultsHeaderRef} className="scroll-hidden text-center mb-14">
-                        <span className="text-primary text-sm font-medium uppercase tracking-wider">Success Stories</span>
-                        <h2 className="text-2xl md:text-3xl font-bold text-dark mt-2">Results of Our Treatment</h2>
+                        <span className="text-primary text-sm font-medium uppercase tracking-wider">Take A Look Inside</span>
+                        <h2 className="text-2xl md:text-3xl font-bold text-dark mt-2">A Clean, Modern Facility</h2>
                     </div>
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                         {results.map((r) => (
@@ -173,8 +175,14 @@ export default function Home() {
                             <PricingCard key={plan.id} {...plan} />
                         ))}
                     </div>
+                    {pricingNote && (
+                        <p className="text-center text-gray-text text-xs mt-8">{pricingNote}</p>
+                    )}
                 </div>
             </section>
+
+            {/* ── 11. Visit Us / Map ── */}
+            <LocationMap />
         </main>
     );
 }

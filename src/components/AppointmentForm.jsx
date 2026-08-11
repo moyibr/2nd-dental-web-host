@@ -49,8 +49,9 @@ export default function AppointmentForm() {
 
     setIsSubmitting(true);
     try {
-      // TODO: Replace with actual API call — POST /api/appointments
-      console.log('📋 Appointment submitted:', form);
+      const apiUrl = import.meta.env.VITE_API_URL || '/api';
+      // TODO: Replace with actual API call — POST to `${apiUrl}/appointments`
+      console.log(`📋 Appointment submitted to ${apiUrl}/appointments:`, form);
       await new Promise((resolve) => setTimeout(resolve, 1500));
       setSubmitted(true);
       setForm(initialState);

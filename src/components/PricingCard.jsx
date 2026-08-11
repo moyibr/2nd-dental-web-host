@@ -1,8 +1,10 @@
 // PricingCard — Plan name, price, features list, and CTA button
 import useScrollAnimation from '../hooks/useScrollAnimation';
+import { clinicConfig } from '../config/clinicConfig';
 
 export default function PricingCard({ name, price, features, highlighted }) {
     const ref = useScrollAnimation();
+    const currency = clinicConfig.business.currency || '$';
 
     return (
         <div
@@ -16,7 +18,7 @@ export default function PricingCard({ name, price, features, highlighted }) {
                 {name}
             </span>
             <div className="mt-3 mb-6">
-                <span className={`text-sm align-top ${highlighted ? 'text-white/70' : 'text-gray-text'}`}>$</span>
+                <span className={`text-sm align-top ${highlighted ? 'text-white/70' : 'text-gray-text'}`}>{currency}</span>
                 <span className={`text-5xl font-bold ${highlighted ? 'text-white' : 'text-dark'}`}>{price}</span>
             </div>
             <ul className="space-y-3 mb-8">

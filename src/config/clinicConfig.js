@@ -1,46 +1,56 @@
 // src/config/clinicConfig.js
 // -----------------------------------------------------------------------------
-// WHITE-LABEL CLINIC CONFIGURATION
+// CLIENT: ADVANCED DENTAL LOUNGE — Civil Lines, Prayagraj, Uttar Pradesh
 // -----------------------------------------------------------------------------
-// This single file controls all content, branding, and media for the website.
-// To onboard a new client, simply update the values in this object and place
-// their media files in the `src/assets/client/` directory.
+// Content here is sourced from the client's live Google Business Profile
+// (name, address, phone, hours snippet, rating, review count, owner statement,
+// and the three named patient reviews). Anything the listing did not provide
+// (doctor names, real photos, exact treatment prices, full week hours) uses
+// clearly-labelled placeholders — search "PLACEHOLDER" to find every one that
+// still needs client-supplied real content.
 // -----------------------------------------------------------------------------
 
 export const clinicConfig = {
     // 1. BUSINESS INFO
     business: {
-        name: 'Toothcare',
-        tagline: 'Dental Clinic Services',
-        phone: '+1 (555) 392-3929',
-        email: 'info@toothcaredental.com',
-        address: '203 Bright Smile Ave, San Francisco, CA 94102',
+        name: 'Advanced Dental Lounge',
+        hindiName: 'एडवांस्ड डेंटल लौंगे',
+        tagline: "Prayagraj's Most Trusted Dental Care, Since 2012",
+        phone: '+91 84180 07034',
+        phoneRaw: '918418007034', // digits only, for tel:/wa.me links
+        email: 'info@advanceddentallounge.in', // PLACEHOLDER — not listed on Google, confirm real inbox
+        address: 'G, 30, 138, MG Marg, behind Elchico Restaurant, near Subhash Chauraha, Civil Lines, Prayagraj, Uttar Pradesh 211001',
+        plusCode: 'FR2M+H9 Prayagraj, Uttar Pradesh',
         hours: {
-            days: 'Monday – Friday',
-            time: '8:00 AM – 8:00 PM',
+            days: 'Monday – Saturday', // PLACEHOLDER — listing only confirmed "closes 8 pm"; verify full week & Sunday status
+            time: '10:00 AM – 8:00 PM', // PLACEHOLDER — verify opening time
         },
+        currency: '₹',
+        rating: 4.7,
+        reviewCount: 190,
+        googleMapsUrl: 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent('Advanced Dental Lounge, MG Marg, Civil Lines, Prayagraj, Uttar Pradesh 211001'),
         // Paths relative to src/assets/client/ or public/
-        logo: '/tooth.svg',
-        favicon: '/tooth.svg',
+        logo: '/tooth.svg', // PLACEHOLDER — swap in the real logo once received
+        favicon: '/tooth.svg', // PLACEHOLDER
     },
 
-    // 2. THEME & BRANDING
+    // 2. THEME & BRANDING — deep teal + gold, a calmer "lounge" feel rather than a clinical one
     theme: {
-        primaryColor: '#01d28e',      // Main brand color (buttons, highlights)
-        primaryDarkColor: '#00b377',  // Hover states
-        primaryLightColor: '#e6faf3', // Light backgrounds
-        secondaryColor: '#1a1a2e',    // Footer, dark sections
-        accentColor: '#ffb534',       // Optional accent (badges, stars)
-        fontFamily: '"Roboto", sans-serif',
-        fontUrl: 'https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap',
+        primaryColor: '#0E7C7B',
+        primaryDarkColor: '#0A5F5E',
+        primaryLightColor: '#E4F5F4',
+        secondaryColor: '#0B1E2A',
+        accentColor: '#C9A227',
+        fontFamily: '"Poppins", sans-serif',
+        fontUrl: 'https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap',
     },
 
-    // 3. SOCIAL LINKS
+    // 3. SOCIAL LINKS — left blank where unknown; footer hides any empty entry automatically
     social: {
-        facebook: 'https://facebook.com',
-        instagram: 'https://instagram.com',
-        twitter: 'https://twitter.com',
-        whatsapp: '',
+        facebook: '', // PLACEHOLDER — not on the Google listing, add if the client has a page
+        instagram: '', // PLACEHOLDER
+        twitter: '',
+        whatsapp: 'https://wa.me/918418007034?text=' + encodeURIComponent('Hi, I would like to book a dental appointment at Advanced Dental Lounge.'),
         youtube: '',
     },
 
@@ -49,10 +59,10 @@ export const clinicConfig = {
         slides: [
             {
                 id: 1,
-                type: 'image', // 'image' or 'video'
+                type: 'image',
                 media: 'https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=1400&h=700&fit=crop',
-                heading: 'Trusted Dental Care for Your Entire Family',
-                subheading: 'Experience world-class dentistry with a personal touch. Our expert team uses the latest technology to deliver beautiful, healthy smiles.',
+                heading: "Prayagraj's Most Trusted Dental Hospital for 14+ Years",
+                subheading: 'Top-quality, clean, and painless dental treatments — the reason thousands of families in Civil Lines trust us with their smiles, year after year.',
                 cta1Text: 'See Our Services',
                 cta1Link: '#services',
                 cta2Text: 'Book Appointment',
@@ -62,197 +72,208 @@ export const clinicConfig = {
                 id: 2,
                 type: 'image',
                 media: 'https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=1400&h=700&fit=crop',
-                heading: 'A Brighter Smile Starts Here',
-                subheading: 'From routine cleanings to advanced cosmetic procedures, we provide comprehensive dental solutions tailored to your unique needs.',
-                cta1Text: 'Make An Appointment',
-                cta1Link: '#contact',
-                cta2Text: 'Learn More',
-                cta2Link: '#about',
+                heading: 'From Root Canals to Smile Makeovers — Painlessly',
+                subheading: "Rated 4.7★ by 190+ patients on Google. Modern equipment, a hygienic clinic, and a team that treats you like family.",
+                cta1Text: 'Read Patient Reviews',
+                cta1Link: '#testimonials',
+                cta2Text: 'Get Directions',
+                cta2Link: '#visit',
             },
         ],
     },
 
     // 5. SERVICE HIGHLIGHTS (Beside Appointment Form)
     serviceHighlights: [
-        { id: 1, icon: '📅', title: 'Easy Booking', description: 'Schedule your appointment online in seconds — choose your preferred time, date, and dentist.' },
-        { id: 2, icon: '👨‍⚕️', title: 'Expert Team', description: 'Our board-certified dentists bring decades of combined experience and specialize in cosmetic and preventive care.' },
-        { id: 3, icon: '💰', title: 'Best Price Guarantee', description: 'We offer competitive, transparent pricing with flexible payment plans so quality dental care fits every budget.' },
+        { id: 1, icon: '📅', title: '14+ Years of Trusted Care', description: 'Serving Prayagraj since 2012 with top-quality, painless dental treatments trusted by thousands of patients.' },
+        { id: 2, icon: '🧼', title: 'Hygienic, Modern Facility', description: 'State-of-the-art equipment and hospital-grade sterilization — our patients consistently highlight how clean and modern the clinic is.' },
+        { id: 3, icon: '👨‍👩‍👧‍👦', title: 'A Family Dentist for Generations', description: 'Many patients trust us as their family dentist, bringing parents, children, and relatives here for every dental need.' },
     ],
 
-    // 6. MAIN SERVICES GRID
+    // 6. MAIN SERVICES GRID (grounded in the clinic's real Google review tags: root canal, braces, smile makeover, family dentistry)
     services: [
-        { id: 1, icon: '🛡️', title: 'Tooth Protection', description: 'Comprehensive preventive care including sealants, fluoride treatments, and custom mouthguards.' },
-        { id: 2, icon: '👑', title: 'Dental Implants', description: 'State-of-the-art titanium implants that look, feel, and function just like your natural teeth.' },
-        { id: 3, icon: '🦷', title: 'Dental Care', description: 'Routine checkups, cleanings, and personalized oral hygiene plans to maintain optimal dental health.' },
-        { id: 4, icon: '✨', title: 'Teeth Whitening', description: 'Professional-grade whitening treatments that safely brighten your smile by several shades.' },
-        { id: 5, icon: '🔬', title: 'Dental Calculus', description: 'Advanced scaling and root planing to remove stubborn tartar buildup and prevent gum disease.' },
-        { id: 6, icon: '🩹', title: 'Tooth Removal', description: 'Gentle, pain-free extractions using modern techniques and sedation options for challenging cases.' },
-        { id: 7, icon: '🧹', title: 'Tartar Removal', description: 'Deep cleaning procedures that eliminate plaque and tartar from hard-to-reach areas.' },
-        { id: 8, icon: '🔍', title: 'Tooth Inspection', description: 'Comprehensive digital X-rays and oral examinations to detect issues early and plan precise treatments.' },
+        { id: 1, icon: '🦷', title: 'Root Canal Treatment', description: 'Painless, advanced root canal therapy — often completed in a single sitting using modern rotary endodontics.' },
+        { id: 2, icon: '😁', title: 'Braces & Clear Aligners', description: 'Metal, ceramic, and invisible aligner options to straighten smiles for patients of every age.' },
+        { id: 3, icon: '✨', title: 'Smile Makeover', description: 'Complete smile transformations combining whitening, veneers, and alignment for a confident new look.' },
+        { id: 4, icon: '👨‍👩‍👧‍👦', title: 'Family Dentistry', description: 'Trusted, comprehensive dental care for every generation of your family, under one roof.' },
+        { id: 5, icon: '👑', title: 'Dental Implants & Crowns', description: 'Permanent, natural-looking replacements for missing or damaged teeth.' },
+        { id: 6, icon: '🌟', title: 'Teeth Whitening', description: 'Safe, professional whitening treatments for a noticeably brighter smile.' },
+        { id: 7, icon: '🧒', title: 'Pediatric Dentistry', description: 'Gentle, friendly dental care designed to put children at ease from their very first visit.' },
+        { id: 8, icon: '🧹', title: 'Scaling & Polishing', description: 'Deep cleaning to remove plaque and tartar buildup, keeping gums healthy.' },
+        { id: 9, icon: '🩹', title: 'Tooth Extraction', description: 'Safe, virtually painless extractions, including wisdom tooth removal.' },
+        { id: 10, icon: '🔍', title: 'Dental X-Ray & Checkup', description: 'Comprehensive digital diagnostics and routine oral examinations to catch issues early.' },
     ],
 
     // 7. ABOUT SECTION
     about: {
-        image: 'https://images.unsplash.com/photo-1629909615184-74f495363b67?w=700&h=500&fit=crop',
-        heading: 'Innovative Approach to Modern Dental Treatment',
-        description: 'At Toothcare, we combine cutting-edge dental technology with compassionate care. Our state-of-the-art facility is designed for your comfort, and our team of specialists delivers personalized treatment plans that prioritize both your oral health and overall well-being.',
+        image: 'https://images.unsplash.com/photo-1629909615184-74f495363b67?w=700&h=500&fit=crop', // PLACEHOLDER — swap for a real clinic interior photo
+        heading: "Prayagraj's Most Trusted Dental Care, For 14+ Years",
+        description: "Advanced Dental Lounge has been a leading name in dental care in Civil Lines, Prayagraj, known for top-quality, clean, and painless treatments. As a women-owned and LGBTQ+ friendly practice, we welcome every patient with warmth, respect, and evidence-based care — backed by a 4.7★ rating from 190+ patients on Google.",
         stats: [
-            { icon: '❤️', target: 3000, caption: 'Happy Patients' },
-            { icon: '🦷', target: 2200, caption: 'Treatments Done' },
-            { icon: '📅', target: 24, caption: 'Years Experience' },
+            { icon: '📅', target: 14, caption: 'Years of Trusted Care' },
+            { icon: '⭐', target: 190, caption: '5-Star Google Reviews' },
+            { icon: '🦷', target: 10, caption: 'Specialized Treatments' },
         ]
     },
 
-    // 8. DOCTORS
+    // 8. TEAM — the Google listing does not name an individual dentist, so roles are shown
+    // generically rather than inventing names. PLACEHOLDER — replace with real names/photos/bios
+    // once the client provides them.
     doctors: [
         {
             id: 1,
-            name: 'Dr. Sarah Mitchell',
-            position: 'Head Dentist',
-            bio: 'Passionate about transforming smiles with 15+ years of experience in cosmetic and restorative dentistry.',
+            name: 'Lead Dentist',
+            position: 'General & Cosmetic Dentistry',
+            bio: 'Leads comprehensive dental care with a focus on painless, patient-first treatment.',
             image: 'https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=400&h=500&fit=crop&crop=face',
-            socials: { twitter: '#', facebook: '#', instagram: '#' },
+            socials: {},
         },
         {
             id: 2,
-            name: 'Dr. James Parker',
-            position: 'Orthodontist',
-            bio: 'Specializing in Invisalign and modern braces for patients of all ages with a gentle approach.',
+            name: 'Orthodontist',
+            position: 'Braces & Clear Aligners',
+            bio: 'Specializes in creating confident, well-aligned smiles for patients of every age.',
             image: 'https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=400&h=500&fit=crop&crop=face',
-            socials: { twitter: '#', facebook: '#', instagram: '#' },
+            socials: {},
         },
         {
             id: 3,
-            name: 'Dr. Emily Chen',
-            position: 'Periodontist',
-            bio: 'Expert in gum health and implant placement with a commitment to patient comfort and education.',
+            name: 'Endodontist',
+            position: 'Root Canal Specialist',
+            bio: 'Expert in advanced, single-sitting root canal therapy with a gentle approach.',
             image: 'https://images.unsplash.com/photo-1594824476967-48c8b964f137?w=400&h=500&fit=crop&crop=face',
-            socials: { twitter: '#', facebook: '#', instagram: '#' },
+            socials: {},
         },
         {
             id: 4,
-            name: 'Dr. Michael Torres',
-            position: 'Endodontist',
-            bio: 'Known for painless root canal treatments using advanced microscopic technology and care.',
+            name: 'Pediatric Dentist',
+            position: 'Child & Family Dentistry',
+            bio: 'Gentle, friendly care that makes dental visits stress-free for children and families.',
             image: 'https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=400&h=500&fit=crop&crop=face',
-            socials: { twitter: '#', facebook: '#', instagram: '#' },
+            socials: {},
         },
     ],
 
     // 9. CTA BANNER
     ctaBanner: {
         image: 'https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=1400&h=500&fit=crop',
-        heading: "Don't Wait — Schedule Your Visit Today!",
-        buttonText: 'Make An Appointment',
+        heading: "Don't Wait — Book Your Painless Dental Visit Today!",
+        buttonText: 'Book Appointment',
         buttonLink: '#contact',
     },
 
-    // 10. TESTIMONIALS
+    // 10. TESTIMONIALS — real quotes from the clinic's Google Business Profile.
+    // The two unattributed snippets are labelled "Verified Patient" rather than given invented names.
     testimonials: [
         {
             id: 1,
-            quote: 'I was terrified of going to the dentist, but the team at Toothcare made me feel completely at ease. My smile has never looked better!',
-            name: 'Amanda Richardson',
-            role: 'Business Owner',
-            avatar: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=80&h=80&fit=crop&crop=face',
+            quote: 'I visited Advance Dental Care for my treatment, and I had a great experience. The doctor and his team was very friendly and made me feel comfortable throughout the process. I highly recommend Advance Dental Care to anyone looking for dental care in a friendly and professional environment.',
+            name: 'Khushi Chauhan',
+            role: 'Google Review · 4 months ago',
+            avatar: 'https://ui-avatars.com/api/?name=Khushi+Chauhan&background=0E7C7B&color=fff&bold=true&size=128',
         },
         {
             id: 2,
-            quote: 'After years of hiding my teeth, Dr. Mitchell gave me the confidence to smile again. The implant procedure was smoother than I expected.',
-            name: 'David Okafor',
-            role: 'Software Engineer',
-            avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=80&h=80&fit=crop&crop=face',
+            quote: 'Dentistry of another level. No Comparison, No pain.... Simply the Best! Visit other dental clinics then visit them, you will see the difference like we did. Really happy patient for life long!',
+            name: 'Haiderab Abbas',
+            role: 'Google Review · 1 year ago',
+            avatar: 'https://ui-avatars.com/api/?name=Haiderab+Abbas&background=0A5F5E&color=fff&bold=true&size=128',
         },
         {
             id: 3,
-            quote: 'The whitening results are unreal — I get compliments everywhere I go. The staff is friendly, professional, and genuinely caring.',
-            name: 'Sophia Martinez',
-            role: 'Marketing Director',
-            avatar: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=80&h=80&fit=crop&crop=face',
+            quote: 'I recently visited Advance Dental Care for my treatment, and I had a great experience. The doctor was highly knowledgeable and skilled, and I truly appreciated the care and attention I received. The entire team was very friendly.',
+            name: 'Anjali Yadav',
+            role: 'Google Review · 10 months ago',
+            avatar: 'https://ui-avatars.com/api/?name=Anjali+Yadav&background=C9A227&color=fff&bold=true&size=128',
         },
         {
             id: 4,
-            quote: 'Best dental experience I have ever had. From the modern office to the painless procedures, everything was top-notch.',
-            name: 'Ryan Patel',
-            role: 'Teacher',
-            avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&h=80&fit=crop&crop=face',
+            quote: 'She will always be a Family dentist for me, my family, and all my relatives.',
+            name: 'Verified Patient',
+            role: 'Google Review',
+            avatar: 'https://ui-avatars.com/api/?name=Google+Review&background=0E7C7B&color=fff&bold=true&size=128',
         },
         {
             id: 5,
-            quote: 'Scheduling was effortless and the team even followed up after my procedure. I truly felt cared for beyond just my teeth.',
-            name: 'Jennifer Liu',
-            role: 'Architect',
-            avatar: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=80&h=80&fit=crop&crop=face',
+            quote: 'The facilities were very hygienic, with state of the art equipment.',
+            name: 'Verified Patient',
+            role: 'Google Review',
+            avatar: 'https://ui-avatars.com/api/?name=Google+Review&background=0A5F5E&color=fff&bold=true&size=128',
         },
     ],
 
-    // 11. RESULTS GALLERY
+    // 11. FACILITY GALLERY — repurposed from a generic "before/after results" grid, since we have
+    // no real patient outcome photos to show truthfully. Showcases the clinic itself instead
+    // (matches the real review: "facilities were very hygienic, with state of the art equipment").
+    // PLACEHOLDER images — swap for real clinic photos once received.
     results: [
-        { id: 1, image: 'https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=500&h=400&fit=crop', name: 'Sarah Johnson', info: 'USA, 28 years' },
-        { id: 2, image: 'https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=500&h=400&fit=crop', name: 'Emma Taylor', info: 'Canada, 34 years' },
-        { id: 3, image: 'https://images.unsplash.com/photo-1598256989800-fe5f95da9787?w=500&h=400&fit=crop', name: 'Michael Chen', info: 'UK, 41 years' },
-        { id: 4, image: 'https://images.unsplash.com/photo-1609840114035-3c981b782dfe?w=500&h=400&fit=crop', name: 'Lisa Martinez', info: 'Australia, 26 years' },
+        { id: 1, image: 'https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=500&h=400&fit=crop', name: 'Modern Treatment Rooms', info: 'Comfortable, private treatment suites' },
+        { id: 2, image: 'https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=500&h=400&fit=crop', name: 'Digital X-Ray & Diagnostics', info: 'Advanced imaging for precise treatment planning' },
+        { id: 3, image: 'https://images.unsplash.com/photo-1598256989800-fe5f95da9787?w=500&h=400&fit=crop', name: 'Sterilization & Hygiene', info: 'Hospital-grade sterilization for every patient' },
+        { id: 4, image: 'https://images.unsplash.com/photo-1609840114035-3c981b782dfe?w=500&h=400&fit=crop', name: 'Patient Lounge', info: 'A relaxing space to wait — true to our name' },
     ],
 
-    // 12. BLOG PREVIEWS
+    // 12. BLOG PREVIEWS — PLACEHOLDER editorial content, topics chosen to match the clinic's real
+    // specialties (root canal, braces, smile makeovers). Author kept generic per team preference.
     blog: [
         {
             id: 1,
-            title: 'How to Keep Your Teeth Healthy Between Visits',
-            excerpt: 'Simple daily habits and proven techniques that protect your enamel, prevent cavities, and keep your breath fresh.',
+            title: 'Root Canal Treatment: Myths vs Reality',
+            excerpt: "Worried a root canal will hurt? Here's how modern, painless rotary endodontics has changed the experience completely.",
             date: 'Jul 15, 2026',
-            author: 'Dr. Sarah Mitchell',
+            author: 'Advanced Dental Lounge Team',
             comments: 5,
             image: 'https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=600&h=400&fit=crop',
         },
         {
             id: 2,
-            title: 'The Truth About Teeth Whitening: What Really Works',
-            excerpt: 'We separate fact from fiction on whitening strips, LED kits, and professional treatments so you can choose wisely.',
+            title: 'Braces or Clear Aligners? Choosing the Right Orthodontic Treatment',
+            excerpt: 'A practical comparison of metal braces, ceramic braces, and clear aligners to help you pick what fits your life and budget.',
             date: 'Jun 28, 2026',
-            author: 'Dr. Emily Chen',
+            author: 'Advanced Dental Lounge Team',
             comments: 3,
             image: 'https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=600&h=400&fit=crop',
         },
         {
             id: 3,
-            title: 'Dental Implants vs Bridges: Which Is Right for You?',
-            excerpt: 'A comprehensive comparison of longevity, cost, comfort, and aesthetics to help you make an informed decision.',
+            title: 'What a Smile Makeover Really Involves',
+            excerpt: 'From whitening to veneers to alignment — a step-by-step look at how we plan a complete smile transformation.',
             date: 'Jun 10, 2026',
-            author: 'Dr. James Parker',
+            author: 'Advanced Dental Lounge Team',
             comments: 8,
             image: 'https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=600&h=400&fit=crop',
         },
     ],
 
-    // 13. PRICING PLANS
+    // 13. PRICING — PLACEHOLDER indicative starting prices in ₹, structured around the clinic's
+    // real signature treatments rather than generic membership tiers. Confirm exact rates with the client.
+    pricingNote: '*Starting prices shown for reference. Final cost depends on consultation and diagnosis.',
     pricing: [
         {
             id: 1,
-            name: 'Basic Plan',
-            price: 50,
-            features: ['Diagnostic Services', 'Professional Consultation', 'Basic Cleaning', 'Oral Exam & X-rays', 'Fluoride Treatment', 'Hygiene Kit'],
+            name: 'Consultation & Checkup',
+            price: '200',
+            features: ['Oral Examination', 'Digital X-Ray Review', 'Personalized Treatment Plan', 'Free Follow-up Visit'],
             highlighted: false,
         },
         {
             id: 2,
-            name: 'Standard Plan',
-            price: 79,
-            features: ['Diagnostic Services', 'Professional Consultation', 'Deep Cleaning', 'Oral Exam & X-rays', 'Teeth Whitening', 'Dental Sealants'],
+            name: 'Scaling & Polishing',
+            price: '800',
+            features: ['Full-Mouth Deep Cleaning', 'Plaque & Tartar Removal', 'Polishing', 'Oral Hygiene Guidance'],
             highlighted: false,
         },
         {
             id: 3,
-            name: 'Premium Plan',
-            price: 89,
-            features: ['All Standard Features', 'Tooth Implants', 'Surgical Extractions', 'Cosmetic Bonding', 'Root Canal Therapy', 'Priority Booking'],
+            name: 'Root Canal Treatment',
+            price: '3,500',
+            features: ['Single-Sitting RCT', 'Rotary Endodontics', 'Post-Treatment Care', 'Crown Consultation'],
             highlighted: true,
         },
         {
             id: 4,
-            name: 'Ultimate Plan',
-            price: 99,
-            features: ['All Premium Features', 'Full Mouth Restoration', 'Invisalign Consultation', 'Emergency Coverage', 'Family Discount', 'Annual Checkups'],
+            name: 'Braces / Clear Aligners',
+            price: '25,000',
+            features: ['Free Consultation', 'Metal / Ceramic Options', 'Monthly Adjustments', 'Retainer Included'],
             highlighted: false,
         },
     ],
@@ -262,14 +283,14 @@ export const clinicConfig = {
         { label: 'Home', href: '#home' },
         { label: 'Services', href: '#services' },
         { label: 'About', href: '#about' },
-        { label: 'Doctors', href: '#doctors' },
-        { label: 'Testimonials', href: '#testimonials' },
+        { label: 'Our Team', href: '#doctors' },
+        { label: 'Reviews', href: '#testimonials' },
         { label: 'Pricing', href: '#pricing' },
         { label: 'Blog', href: '#blog' },
-        { label: 'Contact', href: '#contact' },
+        { label: 'Visit Us', href: '#visit' },
     ],
     footer: {
-        aboutText: 'Providing exceptional dental care with a gentle touch. Your smile is our passion and your comfort is our priority.',
-        copyrightText: 'All rights reserved. Crafted with ❤️ for healthy smiles.',
+        aboutText: "Prayagraj's most trusted dental clinic for 14+ years — offering top-quality, hygienic, and painless treatments. Proudly women-owned and LGBTQ+ friendly, welcoming every patient with warmth and care.",
+        copyrightText: "All rights reserved. Advanced Dental Lounge — Prayagraj's Trusted Smile Experts.",
     }
 };

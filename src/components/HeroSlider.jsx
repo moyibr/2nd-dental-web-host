@@ -5,6 +5,7 @@ import { clinicConfig } from '../config/clinicConfig';
 export default function HeroSlider() {
     const [current, setCurrent] = useState(0);
     const { slides } = clinicConfig.hero;
+    const { rating, reviewCount, googleMapsUrl } = clinicConfig.business;
 
     const next = useCallback(() => {
         setCurrent((prev) => (prev + 1) % slides.length);
@@ -50,6 +51,19 @@ export default function HeroSlider() {
                     <div className="relative z-10 h-full flex items-center">
                         <div className="max-w-7xl mx-auto px-4 w-full">
                             <div className="max-w-2xl">
+                                {rating && (
+                                    <a
+                                        href={googleMapsUrl || '#'}
+                                        target={googleMapsUrl ? '_blank' : undefined}
+                                        rel={googleMapsUrl ? 'noopener noreferrer' : undefined}
+                                        className={`inline-flex items-center gap-2 mb-5 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white text-sm transition-all duration-700 delay-100 hover:bg-white/20 ${i === current ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
+                                            }`}
+                                    >
+                                        <span className="text-accent">★★★★★</span>
+                                        <span className="font-semibold">{rating}</span>
+                                        {reviewCount && <span className="text-white/70">({reviewCount} Google reviews)</span>}
+                                    </a>
+                                )}
                                 <h1
                                     className={`text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6 transition-all duration-700 delay-200 ${i === current ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
                                         }`}
