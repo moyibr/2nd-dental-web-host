@@ -119,7 +119,7 @@ export default function Home() {
                         <span className="text-primary text-sm font-medium uppercase tracking-wider">Our Team</span>
                         <h2 className="text-2xl md:text-3xl font-bold text-dark mt-2">Experienced Dental Specialists</h2>
                     </div>
-                    <div className="grid grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-8">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
                         {team.map((member) => (
                             <DoctorCard key={member.id} {...member} />
                         ))}
