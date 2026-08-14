@@ -1,6 +1,7 @@
 // LocationMap — Embedded Google Map, address, hours, and quick contact actions
 import useScrollAnimation from '../hooks/useScrollAnimation';
 import { config, telLink, waLink, formatAddress, summarizeHours } from '../config.js';
+import WhatsAppIcon from './icons/WhatsAppIcon';
 
 export default function LocationMap() {
     const ref = useScrollAnimation();
@@ -67,8 +68,9 @@ export default function LocationMap() {
                                     href={whatsappHref}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="inline-flex items-center justify-center min-h-11 px-6 py-3 bg-gray-light text-dark text-sm font-semibold rounded-full hover:bg-gray-200 transition-colors text-center"
+                                    className="inline-flex items-center justify-center gap-2 min-h-11 px-6 py-3 bg-gray-light text-dark text-sm font-semibold rounded-full hover:bg-gray-200 transition-colors text-center"
                                 >
+                                    <WhatsAppIcon className="w-4 h-4 text-[#25D366]" />
                                     Chat on WhatsApp
                                 </a>
                             )}

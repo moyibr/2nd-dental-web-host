@@ -2,6 +2,7 @@
 // Standard, high-converting pattern for clinic sites. Visible below the `lg`
 // breakpoint only — desktop already has the CTA in the Navbar + WhatsAppButton.
 import { config, telLink, waLink } from '../config.js';
+import WhatsAppIcon from '../components/icons/WhatsAppIcon';
 
 export default function MobileActionBar() {
     const { business, contact } = config;
@@ -26,9 +27,9 @@ export default function MobileActionBar() {
                         href={whatsappHref}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex flex-col items-center justify-center gap-0.5 min-h-14 text-dark text-xs font-semibold border-x border-gray-200 active:bg-gray-light transition-colors"
+                        className="flex flex-col items-center justify-center gap-0.5 min-h-14 text-[#25D366] text-xs font-semibold border-x border-gray-200 active:bg-gray-light transition-colors"
                     >
-                        <span className="text-lg" aria-hidden="true">💬</span>
+                        <WhatsAppIcon className="w-5 h-5" />
                         WhatsApp
                     </a>
                 )}
