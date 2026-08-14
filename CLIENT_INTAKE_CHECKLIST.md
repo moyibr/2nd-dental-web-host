@@ -60,15 +60,37 @@ Send this to the client as-is, or read it out on an onboarding call.
 ## 🟡 Nice-to-Have — use a placeholder and update later
 
 ### Photos
-- [ ] Doctor headshots (professional, good lighting, consistent style
-      ideally) — min ~800×1000px
-- [ ] Clinic interior: reception, treatment rooms, equipment — min
-      ~1200×900px
-- [ ] Hero banner photo(s), landscape — the template wants both a mobile
-      portrait crop and a desktop wide crop per slide
+**Exactly how many to ask for** — count it out per client rather than
+asking vaguely for "some photos":
+
+| Slot | Count | Spec |
+|---|---|---|
+| Logo | 1 | Vector (SVG/AI/EPS) preferred, or large transparent PNG |
+| Favicon | 1 | Can reuse the logo if it's simple enough to read tiny — ask if unsure |
+| Social share image (`business.ogImage`) | 1 | 1200×630px, landscape |
+| Hero slides | **2 images per slide** (`imageMobile` + `imageDesktop`) | Portrait ~900×1100 for mobile, wide ~1600×800 for desktop. Default template uses 2 slides = **4 images**; confirm how many slides the client wants |
+| About/clinic intro (`about.image`) | 1 | ~1200×900, landscape |
+| Doctor/team photos | **1 per doctor featured** | ~800×1000px, portrait, consistent style ideally |
+| Facility/gallery photos | 4–8 | ~1200×900px — reception, treatment rooms, equipment, waiting area |
+| Blog post images | 1 per post, **only if `showBlog` is enabled** | ~1200×800px |
+
+A typical clinic (2 hero slides, 4 doctors, 6 gallery photos, no blog)
+works out to **1 + 1 + 1 + 4 + 1 + 4 + 6 = 18 images**. Recalculate per
+client based on their actual doctor count and how many hero slides/gallery
+shots they want.
+
 - [ ] Team group photo (optional, not currently used but handy to have)
 - [ ] Ask about **usage rights** if any photos are professionally shot —
       confirm you can use them on the live site.
+
+### Video
+**The template does not currently have a video feature built anywhere**
+(no hero background video, no embedded clinic-tour/testimonial video). If
+a client wants video, that's new scope — confirm what they want (hero
+background clip, a clinic-tour section, embedded YouTube testimonials)
+before quoting, since each is a different amount of work to add. Don't
+collect video files from a client until that scope is agreed and built —
+ask for 0 videos by default.
 
 ### Reviews & reputation
 - [ ] Permission to quote their real Google reviews by name (or use
