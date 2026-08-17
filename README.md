@@ -115,6 +115,33 @@ two separate deployments. Point the frontend's `VITE_API_URL` at wherever
 the backend ends up living, and the backend's `CORS_ORIGIN` at wherever the
 frontend ends up living.
 
+### Deploying to Vercel
+
+Both `/frontend` and `/backend` deploy to Vercel as **two separate
+projects** from the same GitHub repo — same "completely separate" split as
+the folders themselves, just extended to hosting:
+
+- **Frontend project** — Root Directory: `frontend`. Vercel auto-detects
+  Vite; no other settings needed. Set env var `VITE_API_URL` to the
+  backend project's URL + `/api` (e.g. `https://your-backend.vercel.app/api`),
+  then redeploy (Vite bakes env vars in at build time, so a plain restart
+  isn't enough — trigger a new deployment after changing it).
+- **Backend project** — Root Directory: `backend`. `backend/api/index.js` +
+  `backend/vercel.json` adapt the Express app to Vercel's serverless
+  functions (the app itself, its routes, and all its middleware are
+  unchanged — `backend/index.js` with `app.listen()` still works exactly
+  the same for any other Node host). Set env vars `CORS_ORIGIN` (the
+  frontend project's URL), `SMTP_*`, `NOTIFY_EMAIL`, and the
+  `RATE_LIMIT_*` pair in the Vercel dashboard — never in a committed file.
+
+One caveat worth knowing: `backend/middleware/rateLimit.js` uses an
+in-memory store, which resets on cold start and isn't shared across
+serverless instances — it still meaningfully slows down a bot hammering
+the endpoint from one region/instance, but it's not as strict a guarantee
+as on a persistent server. Fine for a single clinic's traffic; worth
+revisiting (e.g. a Redis-backed limiter) if a client's form ever sees real
+abuse.
+
 ---
 
 ## Onboarding a new client
