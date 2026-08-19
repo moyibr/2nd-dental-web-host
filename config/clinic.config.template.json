@@ -3,9 +3,9 @@
     "name": "Client Dental Clinic Name",
     "hindiName": "",
     "tagline": "A short, benefit-driven tagline",
-    "logo": "/images/client/logo.svg",
-    "favicon": "/images/client/favicon.svg",
-    "ogImage": "/images/client/og-image.jpg",
+    "logo": "/images/clinic/logo.svg",
+    "favicon": "/images/clinic/favicon.svg",
+    "ogImage": "/images/clinic/og-image.jpg",
     "currency": "₹"
   },
   "theme": {
@@ -22,6 +22,7 @@
     "whatsappNumber": "910000000000",
     "whatsappPresetMessage": "Hi, I would like to book a dental appointment.",
     "email": "info@clientclinic.com",
+    "emergencyContact": { "phone": null, "note": null },
     "address": {
       "line1": "Street address line 1",
       "line2": "Landmark / area",
@@ -75,8 +76,8 @@
     "slides": [
       {
         "id": 1,
-        "imageMobile": "/images/client/hero/slide-1-mobile.jpg",
-        "imageDesktop": "/images/client/hero/slide-1-desktop.jpg",
+        "imageMobile": "/images/clinic/hero-1-mobile.jpg",
+        "imageDesktop": "/images/clinic/hero-1-desktop.jpg",
         "heading": "Headline for the first hero slide",
         "subheading": "Supporting sentence for the first hero slide.",
         "cta1": { "text": "See Our Services", "href": "#services" },
@@ -85,7 +86,7 @@
     ]
   },
   "ctaBanner": {
-    "image": "/images/client/cta-banner.jpg",
+    "image": "/images/clinic/cta-banner.jpg",
     "heading": "Don't Wait — Book Your Visit Today!",
     "buttonText": "Book Appointment",
     "buttonLink": "#contact"
@@ -94,10 +95,10 @@
     { "id": 1, "icon": "📅", "title": "Highlight title", "description": "Highlight description." }
   ],
   "services": [
-    { "id": 1, "icon": "🦷", "title": "Service name", "description": "Service description.", "price": null }
+    { "id": 1, "icon": "🦷", "title": "Service name", "description": "Service description.", "price": null, "duration": null }
   ],
   "about": {
-    "image": "/images/client/about.jpg",
+    "image": "/images/clinic/about-clinic.jpg",
     "heading": "About section heading",
     "description": "About section paragraph.",
     "stats": [
@@ -105,13 +106,13 @@
     ]
   },
   "team": [
-    { "id": 1, "name": "Dr. Full Name", "qualification": "BDS, MDS", "specialization": "Specialization", "bio": "Short bio.", "photo": "/images/client/doctors/1.jpg", "socials": {} }
+    { "id": 1, "name": "Dr. Full Name", "qualification": "BDS, MDS", "registrationNumber": "", "specialization": "Specialization", "bio": "Short bio.", "photo": "/images/doctors/1.jpg", "socials": {} }
   ],
   "testimonials": [
     { "id": 1, "name": "Patient Name", "quote": "Testimonial quote.", "source": "Google Review", "date": "", "avatar": null }
   ],
   "gallery": [
-    { "id": 1, "image": "/images/client/gallery/1.jpg", "caption": "Caption" }
+    { "id": 1, "image": "/images/gallery/1.jpg", "caption": "Caption" }
   ],
   "faq": [
     { "id": 1, "question": "Frequently asked question?", "answer": "Answer." }
@@ -123,7 +124,7 @@
     ]
   },
   "blog": [
-    { "id": 1, "title": "Post title", "excerpt": "Post excerpt.", "date": "", "author": "Clinic Team", "comments": 0, "image": "/images/client/blog/1.jpg" }
+    { "id": 1, "title": "Post title", "excerpt": "Post excerpt.", "date": "", "author": "Clinic Team", "comments": 0, "image": "/images/clinic/blog-1.jpg" }
   ],
   "navigation": [
     { "label": "Home", "href": "#home" },

@@ -1,7 +1,7 @@
 // DoctorCard — Photo card with name, specialization, and social links visible on hover
 import useScrollAnimation from '../hooks/useScrollAnimation';
 
-export default function DoctorCard({ name, qualification, specialization, bio, photo, socials = {} }) {
+export default function DoctorCard({ name, qualification, registrationNumber, specialization, bio, photo, socials = {} }) {
     const ref = useScrollAnimation();
     const socialEntries = Object.entries(socials).filter(([, url]) => url);
 
@@ -38,7 +38,8 @@ export default function DoctorCard({ name, qualification, specialization, bio, p
             <div className="text-center">
                 <h3 className="text-lg font-bold text-dark group-hover:text-primary transition-colors">{name}</h3>
                 <span className="text-primary text-sm font-medium block">{specialization}</span>
-                {qualification && <span className="text-gray-text text-xs">{qualification}</span>}
+                {qualification && <span className="text-gray-text text-xs block">{qualification}</span>}
+                {registrationNumber && <span className="text-gray-text text-xs block">Reg. No. {registrationNumber}</span>}
                 <p className="text-gray-text text-sm mt-2 leading-relaxed">{bio}</p>
             </div>
         </div>

@@ -6,7 +6,7 @@ not inside either) because both apps read it — see the root
 [`README.md`](../README.md#why-config-is-shared-not-inside-frontend) for why.
 Nothing in `/frontend/src` or `/backend` should ever need to change to
 onboard a new clinic — you only edit this JSON file and swap images in
-`frontend/public/images/client/`.
+`frontend/public/images/{clinic,doctors,gallery}/`.
 
 Start a new client by copying the template:
 
@@ -31,9 +31,9 @@ open while you edit.
 | `name` | ✅ | Used in the title, footer, JSON-LD. |
 | `hindiName` | – | Optional local-language name, shown nowhere yet but kept for future use / local SEO keywords. |
 | `tagline` | ✅ | Short line shown under the name in `<title>` and TopBar. |
-| `logo` | ✅ | Path under `frontend/public/images/client/`, e.g. `/images/client/logo.svg`. |
+| `logo` | ✅ | Path under `frontend/public/images/clinic/`, e.g. `/images/clinic/logo.svg`. |
 | `favicon` | ✅ | Same as above. SVG or ICO. |
-| `ogImage` | ✅ | 1200×630 image used for social share previews (Open Graph). |
+| `ogImage` | ✅ | 1200×630 image used for social share previews (Open Graph). Use a local path like the others (`/images/clinic/og-image.jpg`) — it's automatically converted to a full `https://...` URL using `seo.siteUrl` when the page is built, since social platforms require an absolute URL here. |
 | `currency` | ✅ | Symbol shown before prices in the pricing grid, e.g. `₹`, `$`, `£`. |
 
 ## `theme`
@@ -41,7 +41,7 @@ open while you edit.
 |---|---|---|
 | `primaryColor` / `primaryDarkColor` / `primaryLightColor` | ✅ | Hex. Used for buttons, links, highlights. `Dark` = hover state, `Light` = tinted backgrounds. |
 | `secondaryColor` | ✅ | Dark color for the footer / dark sections. |
-| `accentColor` | ✅ | Used sparingly (badges, stars, ratings). |
+| `accentColor` | ✅ | Used sparingly (badges, stars, ratings). **Contrast warning:** the accent is meant for use on dark/colored backgrounds only (e.g. a star icon over a photo overlay). Many good-looking accent colors (gold, orange, light colors) fail WCAG AA contrast (4.5:1) as text on a plain white background — the default `#C9A227` is only 2.4:1 on white, for example. Never use `text-accent` as body text on a light background; check contrast (e.g. [webaim.org/resources/contrastchecker](https://webaim.org/resources/contrastchecker/)) before picking a client's accent color if you plan to use it anywhere besides its current dark-background usage. |
 | `font` | ✅ | Must be one of the keys in `frontend/src/theme/fonts.js`: `Poppins`, `Roboto`, `Inter`, `Outfit`, `Nunito`, `Playfair Display`. Pick one that suits the brand (e.g. `Playfair Display` for an upscale/cosmetic clinic, `Nunito` for a friendly family practice). |
 
 ## `contact`
@@ -52,6 +52,7 @@ open while you edit.
 | `whatsappNumber` | – | Digits only, no `+`, used in `wa.me` links. Leave `""` to hide all WhatsApp buttons. |
 | `whatsappPresetMessage` | – | Pre-filled chat message. |
 | `email` | ✅ | Used in footer + `mailto:` links. |
+| `emergencyContact.phone` / `.note` | – | Optional. Only fill in if the clinic actually offers a distinct emergency line — don't invent one. `phone` renders as a `tel:` link, `note` is a short line like "24/7 dental emergencies". Set both to `null` to hide it entirely (default). Rendered in the Visit Us / contact section. |
 | `address` | ✅ | Structured — used for display AND JSON-LD `PostalAddress`. |
 | `plusCode` | – | Google Plus Code, if known — more precise than a street address for the map embed. |
 | `geo.lat` / `geo.lng` | – | Leave `null` if unknown. When set, improves JSON-LD accuracy (map pin, "near me" search). |
@@ -103,13 +104,13 @@ Full-width band between the Team and Testimonials sections: `image` (background)
 The 3-up "Why Choose Us" row next to the appointment form: `icon` (single emoji), `title`, `description`.
 
 ## `services[]`
-`icon`, `title`, `description`, `price` (string like `"1,500"` or `null` to hide the price on the card).
+`icon`, `title`, `description`, `price` (string like `"1,500"` or `null` to hide the price on the card), `duration` (string like `"30 min"` or `null` to hide it — optional, only fill in if the clinic gives you real typical treatment times).
 
 ## `about`
 `image`, `heading`, `description`, `stats[]` (each `icon` + `target` (integer, animates counting up) + `caption`).
 
 ## `team[]`
-`name`, `qualification` (e.g. `"BDS, MDS"`, can be `""`), `specialization`, `bio`, `photo`, `socials` (object, any of `facebook`/`instagram`/`twitter`, omit keys you don't have).
+`name`, `qualification` (e.g. `"BDS, MDS"`, can be `""`), `registrationNumber` (their state dental council registration number, e.g. `"UPDC-12345"` — a real trust signal for patients, but only fill it in if you actually have it; leave `""` to hide), `specialization`, `bio`, `photo`, `socials` (object, any of `facebook`/`instagram`/`twitter`, omit keys you don't have).
 
 **If you don't have named doctors yet**, use role titles instead of inventing names — e.g. `"name": "Lead Dentist"` — never fabricate a person who doesn't exist at the real clinic.
 
@@ -138,16 +139,29 @@ Only rendered when `featureFlags.showBlog` is `true`. `title`, `excerpt`, `date`
 
 ---
 
-## Images (`frontend/public/images/client/`)
-Put every client-swappable image here — referenced by plain path in the JSON above (external `https://...` URLs also work if you don't have local files yet, e.g. temporary stock photos). Suggested layout:
+## Images (`frontend/public/images/`)
+Put every client-swappable image here — referenced by plain path in the JSON above. Layout:
 ```
-frontend/public/images/client/
-  logo.svg
-  favicon.svg
-  og-image.jpg
-  hero/            slide-1-mobile.jpg, slide-1-desktop.jpg, ...
-  doctors/         1.jpg, 2.jpg, ...
-  gallery/         1.jpg, 2.jpg, ...
-  blog/            1.jpg, ...
+frontend/public/images/
+  clinic/     logo.svg, favicon.svg, og-image.jpg, hero-1-mobile.jpg, hero-1-desktop.jpg,
+              hero-2-mobile.jpg, hero-2-desktop.jpg, cta-banner.jpg, about-clinic.jpg
+  doctors/    one photo per team member — name files descriptively (lead-dentist.jpg,
+              orthodontist.jpg, ...) rather than 1.jpg/2.jpg
+  gallery/    facility/equipment photos — descriptive names (treatment-rooms.jpg,
+              digital-xray.jpg, sterilization.jpg, ...)
 ```
-Keep files reasonably sized before uploading (hero images ≤ ~300KB, others ≤ ~150KB) — there's no automatic image optimization pipeline in this template, so oversized source images directly slow down the site.
+Use descriptive filenames (not `1.jpg`, `2.jpg`) — it makes the folder self-explanatory
+months later when you're onboarding client #5 and can't remember which file is which.
+
+**Always use local files, never a hotlinked `https://...` URL** (even as a placeholder)
+— external images can disappear or change without warning. This actually happened
+during development of this template: one of the original Unsplash placeholder photos
+was taken down mid-project and started 404ing. Every image shipped with this template
+is a real local file for exactly that reason. The one deliberate exception is
+testimonial avatars (`testimonials[].avatar`) — leaving that `null` intentionally
+falls back to an auto-generated initials avatar from `ui-avatars.com`, which is the
+*designed* fallback for a missing optional photo, not a risk.
+
+Keep files reasonably sized before uploading (hero images ≤ ~300KB, others ≤ ~150KB) —
+there's no automatic image optimization pipeline in this template, so oversized source
+images directly slow down the site.

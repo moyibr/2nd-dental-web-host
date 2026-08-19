@@ -3,9 +3,9 @@
     "name": "Advanced Dental Lounge",
     "hindiName": "एडवांस्ड डेंटल लौंगे",
     "tagline": "Prayagraj's Most Trusted Dental Care, Since 2012",
-    "logo": "/images/client/logo.svg",
-    "favicon": "/images/client/favicon.svg",
-    "ogImage": "https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=1200&h=630&fit=crop",
+    "logo": "/images/clinic/logo.svg",
+    "favicon": "/images/clinic/favicon.svg",
+    "ogImage": "/images/clinic/og-image.jpg",
     "currency": "₹"
   },
   "theme": {
@@ -22,6 +22,7 @@
     "whatsappNumber": "918418007034",
     "whatsappPresetMessage": "Hi, I would like to book a dental appointment at Advanced Dental Lounge.",
     "email": "info@advanceddentallounge.in",
+    "emergencyContact": { "phone": null, "note": null },
     "address": {
       "line1": "G, 30, 138, MG Marg",
       "line2": "behind Elchico Restaurant, near Subhash Chauraha, Civil Lines",
@@ -83,8 +84,8 @@
     "slides": [
       {
         "id": 1,
-        "imageMobile": "https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=900&h=1100&fit=crop",
-        "imageDesktop": "https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=1600&h=800&fit=crop",
+        "imageMobile": "/images/clinic/hero-1-mobile.jpg",
+        "imageDesktop": "/images/clinic/hero-1-desktop.jpg",
         "heading": "Prayagraj's Most Trusted Dental Hospital for 14+ Years",
         "subheading": "Top-quality, clean, and painless dental treatments — the reason thousands of families in Civil Lines trust us with their smiles, year after year.",
         "cta1": { "text": "See Our Services", "href": "#services" },
@@ -92,8 +93,8 @@
       },
       {
         "id": 2,
-        "imageMobile": "https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=900&h=1100&fit=crop",
-        "imageDesktop": "https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=1600&h=800&fit=crop",
+        "imageMobile": "/images/clinic/hero-2-mobile.jpg",
+        "imageDesktop": "/images/clinic/hero-2-desktop.jpg",
         "heading": "From Root Canals to Smile Makeovers — Painlessly",
         "subheading": "Rated 4.7★ by 190+ patients on Google. Modern equipment, a hygienic clinic, and a team that treats you like family.",
         "cta1": { "text": "Read Patient Reviews", "href": "#testimonials" },
@@ -102,7 +103,7 @@
     ]
   },
   "ctaBanner": {
-    "image": "https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=1400&h=500&fit=crop",
+    "image": "/images/clinic/cta-banner.jpg",
     "heading": "Don't Wait — Book Your Painless Dental Visit Today!",
     "buttonText": "Book Appointment",
     "buttonLink": "#contact"
@@ -113,19 +114,19 @@
     { "id": 3, "icon": "👨‍👩‍👧‍👦", "title": "A Family Dentist for Generations", "description": "Many patients trust us as their family dentist, bringing parents, children, and relatives here for every dental need." }
   ],
   "services": [
-    { "id": 1, "icon": "🦷", "title": "Root Canal Treatment", "description": "Painless, advanced root canal therapy — often completed in a single sitting using modern rotary endodontics.", "price": null },
-    { "id": 2, "icon": "😁", "title": "Braces & Clear Aligners", "description": "Metal, ceramic, and invisible aligner options to straighten smiles for patients of every age.", "price": null },
-    { "id": 3, "icon": "✨", "title": "Smile Makeover", "description": "Complete smile transformations combining whitening, veneers, and alignment for a confident new look.", "price": null },
-    { "id": 4, "icon": "👨‍👩‍👧‍👦", "title": "Family Dentistry", "description": "Trusted, comprehensive dental care for every generation of your family, under one roof.", "price": null },
-    { "id": 5, "icon": "👑", "title": "Dental Implants & Crowns", "description": "Permanent, natural-looking replacements for missing or damaged teeth.", "price": null },
-    { "id": 6, "icon": "🌟", "title": "Teeth Whitening", "description": "Safe, professional whitening treatments for a noticeably brighter smile.", "price": null },
-    { "id": 7, "icon": "🧒", "title": "Pediatric Dentistry", "description": "Gentle, friendly dental care designed to put children at ease from their very first visit.", "price": null },
-    { "id": 8, "icon": "🧹", "title": "Scaling & Polishing", "description": "Deep cleaning to remove plaque and tartar buildup, keeping gums healthy.", "price": null },
-    { "id": 9, "icon": "🩹", "title": "Tooth Extraction", "description": "Safe, virtually painless extractions, including wisdom tooth removal.", "price": null },
-    { "id": 10, "icon": "🔍", "title": "Dental X-Ray & Checkup", "description": "Comprehensive digital diagnostics and routine oral examinations to catch issues early.", "price": null }
+    { "id": 1, "icon": "🦷", "title": "Root Canal Treatment", "description": "Painless, advanced root canal therapy — often completed in a single sitting using modern rotary endodontics.", "price": null, "duration": null },
+    { "id": 2, "icon": "😁", "title": "Braces & Clear Aligners", "description": "Metal, ceramic, and invisible aligner options to straighten smiles for patients of every age.", "price": null, "duration": null },
+    { "id": 3, "icon": "✨", "title": "Smile Makeover", "description": "Complete smile transformations combining whitening, veneers, and alignment for a confident new look.", "price": null, "duration": null },
+    { "id": 4, "icon": "👨‍👩‍👧‍👦", "title": "Family Dentistry", "description": "Trusted, comprehensive dental care for every generation of your family, under one roof.", "price": null, "duration": null },
+    { "id": 5, "icon": "👑", "title": "Dental Implants & Crowns", "description": "Permanent, natural-looking replacements for missing or damaged teeth.", "price": null, "duration": null },
+    { "id": 6, "icon": "🌟", "title": "Teeth Whitening", "description": "Safe, professional whitening treatments for a noticeably brighter smile.", "price": null, "duration": null },
+    { "id": 7, "icon": "🧒", "title": "Pediatric Dentistry", "description": "Gentle, friendly dental care designed to put children at ease from their very first visit.", "price": null, "duration": null },
+    { "id": 8, "icon": "🧹", "title": "Scaling & Polishing", "description": "Deep cleaning to remove plaque and tartar buildup, keeping gums healthy.", "price": null, "duration": null },
+    { "id": 9, "icon": "🩹", "title": "Tooth Extraction", "description": "Safe, virtually painless extractions, including wisdom tooth removal.", "price": null, "duration": null },
+    { "id": 10, "icon": "🔍", "title": "Dental X-Ray & Checkup", "description": "Comprehensive digital diagnostics and routine oral examinations to catch issues early.", "price": null, "duration": null }
   ],
   "about": {
-    "image": "https://images.unsplash.com/photo-1629909615184-74f495363b67?w=700&h=500&fit=crop",
+    "image": "/images/clinic/about-clinic.jpg",
     "heading": "Prayagraj's Most Trusted Dental Care, For 14+ Years",
     "description": "Advanced Dental Lounge has been a leading name in dental care in Civil Lines, Prayagraj, known for top-quality, clean, and painless treatments. As a women-owned and LGBTQ+ friendly practice, we welcome every patient with warmth, respect, and evidence-based care — backed by a 4.7★ rating from 190+ patients on Google.",
     "stats": [
@@ -135,10 +136,10 @@
     ]
   },
   "team": [
-    { "id": 1, "name": "Lead Dentist", "qualification": "", "specialization": "General & Cosmetic Dentistry", "bio": "Leads comprehensive dental care with a focus on painless, patient-first treatment.", "photo": "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=400&h=500&fit=crop&crop=face", "socials": {} },
-    { "id": 2, "name": "Orthodontist", "qualification": "", "specialization": "Braces & Clear Aligners", "bio": "Specializes in creating confident, well-aligned smiles for patients of every age.", "photo": "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=400&h=500&fit=crop&crop=face", "socials": {} },
-    { "id": 3, "name": "Endodontist", "qualification": "", "specialization": "Root Canal Specialist", "bio": "Expert in advanced, single-sitting root canal therapy with a gentle approach.", "photo": "https://images.unsplash.com/photo-1594824476967-48c8b964f137?w=400&h=500&fit=crop&crop=face", "socials": {} },
-    { "id": 4, "name": "Pediatric Dentist", "qualification": "", "specialization": "Child & Family Dentistry", "bio": "Gentle, friendly care that makes dental visits stress-free for children and families.", "photo": "https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=400&h=500&fit=crop&crop=face", "socials": {} }
+    { "id": 1, "name": "Lead Dentist", "qualification": "", "registrationNumber": "", "specialization": "General & Cosmetic Dentistry", "bio": "Leads comprehensive dental care with a focus on painless, patient-first treatment.", "photo": "/images/doctors/lead-dentist.jpg", "socials": {} },
+    { "id": 2, "name": "Orthodontist", "qualification": "", "registrationNumber": "", "specialization": "Braces & Clear Aligners", "bio": "Specializes in creating confident, well-aligned smiles for patients of every age.", "photo": "/images/doctors/orthodontist.jpg", "socials": {} },
+    { "id": 3, "name": "Endodontist", "qualification": "", "registrationNumber": "", "specialization": "Root Canal Specialist", "bio": "Expert in advanced, single-sitting root canal therapy with a gentle approach.", "photo": "/images/doctors/endodontist.jpg", "socials": {} },
+    { "id": 4, "name": "Pediatric Dentist", "qualification": "", "registrationNumber": "", "specialization": "Child & Family Dentistry", "bio": "Gentle, friendly care that makes dental visits stress-free for children and families.", "photo": "/images/doctors/pediatric-dentist.jpg", "socials": {} }
   ],
   "testimonials": [
     { "id": 1, "name": "Khushi Chauhan", "quote": "I visited Advance Dental Care for my treatment, and I had a great experience. The doctor and his team was very friendly and made me feel comfortable throughout the process. I highly recommend Advance Dental Care to anyone looking for dental care in a friendly and professional environment.", "source": "Google Review", "date": "4 months ago", "avatar": null },
@@ -148,10 +149,10 @@
     { "id": 5, "name": "Verified Patient", "quote": "The facilities were very hygienic, with state of the art equipment.", "source": "Google Review", "date": "", "avatar": null }
   ],
   "gallery": [
-    { "id": 1, "image": "https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=500&h=400&fit=crop", "caption": "Modern Treatment Rooms" },
-    { "id": 2, "image": "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=500&h=400&fit=crop", "caption": "Digital X-Ray & Diagnostics" },
-    { "id": 3, "image": "https://images.unsplash.com/photo-1598256989800-fe5f95da9787?w=500&h=400&fit=crop", "caption": "Sterilization & Hygiene" },
-    { "id": 4, "image": "https://images.unsplash.com/photo-1609840114035-3c981b782dfe?w=500&h=400&fit=crop", "caption": "Patient Lounge" }
+    { "id": 1, "image": "/images/gallery/treatment-rooms.jpg", "caption": "Modern Treatment Rooms" },
+    { "id": 2, "image": "/images/gallery/digital-xray.jpg", "caption": "Digital X-Ray & Diagnostics" },
+    { "id": 3, "image": "/images/gallery/sterilization.jpg", "caption": "Sterilization & Hygiene" },
+    { "id": 4, "image": "/images/gallery/patient-lounge.jpg", "caption": "Patient Lounge" }
   ],
   "faq": [
     { "id": 1, "question": "Is root canal treatment really painless?", "answer": "Yes — we use modern rotary endodontics and local anesthesia, so most patients feel little to no pain during the procedure. Many are completed in a single sitting." },

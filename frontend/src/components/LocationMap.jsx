@@ -54,6 +54,21 @@ export default function LocationMap() {
                             </div>
                         </div>
 
+                        {contact.emergencyContact?.phone && (
+                            <div className="flex items-start gap-3 bg-red-50 border border-red-100 rounded-xl p-3 -mx-1">
+                                <span className="text-red-500 text-xl mt-0.5">🚨</span>
+                                <div>
+                                    <h3 className="font-bold text-red-700 text-sm mb-1">Dental Emergency</h3>
+                                    {contact.emergencyContact.note && (
+                                        <p className="text-red-700/80 text-xs mb-1">{contact.emergencyContact.note}</p>
+                                    )}
+                                    <a href={`tel:${contact.emergencyContact.phone}`} className="text-red-700 text-sm font-semibold hover:underline">
+                                        {contact.emergencyContact.phone}
+                                    </a>
+                                </div>
+                            </div>
+                        )}
+
                         <div className="flex flex-wrap gap-3 mt-2">
                             <a
                                 href={contact.directionsUrl}

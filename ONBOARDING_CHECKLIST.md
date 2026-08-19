@@ -41,14 +41,19 @@ client doesn't hit the same wall).
 
 ## 3. Images
 
-- [ ] Replace everything in `frontend/public/images/client/`: `logo.svg`,
-      `favicon.svg`, `og-image.jpg` (1200×630), plus `hero/`, `doctors/`,
-      `gallery/` as referenced in the config.
+- [ ] Replace everything in `frontend/public/images/clinic/`: `logo.svg`,
+      `favicon.svg`, `og-image.jpg` (1200×630), hero images, `about-clinic.jpg`,
+      `cta-banner.jpg` — plus `frontend/public/images/doctors/` (one per team
+      member) and `frontend/public/images/gallery/` (facility photos), all
+      referenced by path in the config.
 - [ ] Keep files reasonably small (hero ≤ ~300KB, others ≤ ~150KB) — there's
       no automatic image optimization pipeline.
 - [ ] For the hero, supply both `imageMobile` (portrait, ~900×1100) and
       `imageDesktop` (wide, ~1600×800) per slide.
-- [ ] Update any config fields still pointing at placeholder Unsplash URLs.
+- [ ] Confirm no config field still points at an external URL (e.g. Unsplash)
+      — every image should be a local `/images/...` path. External hotlinked
+      images can disappear or change without warning (it happened once
+      already during development of this very template).
 
 ## 4. Feature flags
 

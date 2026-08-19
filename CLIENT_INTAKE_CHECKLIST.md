@@ -153,6 +153,6 @@ timeline — #1 is meaningfully more work than #2 or #3.
 
 1. `cp config/clinic.config.template.json config/clinic.config.json`
 2. Fill it in using `config/README.md` as the field reference
-3. Drop images into `frontend/public/images/client/`
+3. Drop images into `frontend/public/images/{clinic,doctors,gallery}/`
 4. Follow [`ONBOARDING_CHECKLIST.md`](ONBOARDING_CHECKLIST.md) for the
    rest of the build → deploy flow

@@ -151,7 +151,7 @@ collect from the client, and [`ONBOARDING_CHECKLIST.md`](ONBOARDING_CHECKLIST.md
 for the build → deploy steps once you have it. Short version:
 
 1. Copy `config/clinic.config.template.json` → `config/clinic.config.json` and fill it in (see `config/README.md` for every field).
-2. Drop their images into `frontend/public/images/client/`.
+2. Drop their images into `frontend/public/images/{clinic,doctors,gallery}/`.
 3. `cd frontend && npm run dev`, eyeball it, toggle `featureFlags` as needed.
 4. `npm run build`, deploy `frontend/dist/` + `/backend` separately.
 

@@ -8,6 +8,17 @@
 import { useEffect } from 'react';
 import { config } from '../config.js';
 
+// Open Graph and JSON-LD `image` both require an ABSOLUTE URL per spec —
+// social crawlers (Facebook, WhatsApp, LinkedIn, Twitter) generally won't
+// resolve a relative path. Most image fields in the config are now local
+// paths like "/images/clinic/og-image.jpg", so join them with seo.siteUrl.
+function toAbsoluteUrl(path) {
+    if (!path) return path;
+    if (/^https?:\/\//i.test(path)) return path;
+    const site = config.seo?.siteUrl?.replace(/\/$/, '') || '';
+    return `${site}${path.startsWith('/') ? '' : '/'}${path}`;
+}
+
 function setMetaTag(attr, key, content) {
     if (!content) return;
     let el = document.head.querySelector(`meta[${attr}="${key}"]`);
@@ -36,7 +47,7 @@ function buildJsonLd() {
         '@context': 'https://schema.org',
         '@type': 'Dentist',
         name: business.name,
-        image: business.ogImage || business.logo,
+        image: toAbsoluteUrl(business.ogImage || business.logo),
         url: seo.siteUrl || undefined,
         telephone: contact.phoneDial,
         address: {
@@ -90,7 +101,7 @@ export default function SEOHead() {
         setMetaTag('property', 'og:type', 'business.business');
         setMetaTag('property', 'og:title', seo.title || business.name);
         setMetaTag('property', 'og:description', seo.description);
-        setMetaTag('property', 'og:image', business.ogImage);
+        setMetaTag('property', 'og:image', toAbsoluteUrl(business.ogImage));
         setMetaTag('property', 'og:url', seo.siteUrl);
         setMetaTag('property', 'og:locale', 'en_IN');
 

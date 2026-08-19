@@ -16,6 +16,16 @@ const monorepoRoot = path.resolve(__dirname, '../..');    // repo root — where
 const config = JSON.parse(fs.readFileSync(path.join(monorepoRoot, 'config/clinic.config.json'), 'utf-8'));
 const { business, contact, hours, seo, trust } = config;
 
+// Open Graph and JSON-LD `image` both require an ABSOLUTE URL per spec —
+// social crawlers won't resolve a relative path. Image fields in the config
+// are local paths like "/images/clinic/og-image.jpg", so join with siteUrl.
+function toAbsoluteUrl(imgPath) {
+    if (!imgPath) return imgPath;
+    if (/^https?:\/\//i.test(imgPath)) return imgPath;
+    const site = (seo.siteUrl || '').replace(/\/$/, '');
+    return `${site}${imgPath.startsWith('/') ? '' : '/'}${imgPath}`;
+}
+
 function escapeHtml(str = '') {
     return String(str)
         .replace(/&/g, '&amp;')
@@ -34,7 +44,7 @@ function buildJsonLd() {
         '@context': 'https://schema.org',
         '@type': 'Dentist',
         name: business.name,
-        image: business.ogImage || business.logo,
+        image: toAbsoluteUrl(business.ogImage || business.logo),
         url: seo.siteUrl || undefined,
         telephone: contact.phoneDial,
         address: {
@@ -69,7 +79,7 @@ function buildHeadBlock() {
         `<meta property="og:type" content="business.business" />`,
         `<meta property="og:title" content="${escapeHtml(seo.title || business.name)}" />`,
         `<meta property="og:description" content="${escapeHtml(seo.description)}" />`,
-        business.ogImage && `<meta property="og:image" content="${escapeHtml(business.ogImage)}" />`,
+        business.ogImage && `<meta property="og:image" content="${escapeHtml(toAbsoluteUrl(business.ogImage))}" />`,
         seo.siteUrl && `<meta property="og:url" content="${escapeHtml(seo.siteUrl)}" />`,
         `<meta property="og:locale" content="en_IN" />`,
         `<script type="application/ld+json">${JSON.stringify(buildJsonLd())}</script>`,
