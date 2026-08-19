@@ -22,9 +22,9 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-4 flex items-center justify-between h-16">
         {/* Mobile Brand / Logo (only visible on mobile, desktop has TopBar) */}
-        <a href="#home" className="lg:hidden flex items-center gap-2 min-h-11">
-          <img src={business.logo} alt={business.name} className="w-8 h-8" width="32" height="32" />
-          <span className="font-bold text-dark truncate max-w-[45vw]">{business.name}</span>
+        <a href="#home" className="lg:hidden flex items-center gap-2 min-h-11 flex-1 min-w-0 mr-2">
+          <img src={business.logo} alt={business.name} className="w-8 h-8 flex-shrink-0" width="32" height="32" />
+          <span className="font-bold text-dark truncate">{business.name}</span>
         </a>
 
         {/* Desktop Nav Links */}

@@ -136,10 +136,10 @@
     ]
   },
   "team": [
-    { "id": 1, "name": "Lead Dentist", "qualification": "", "registrationNumber": "", "specialization": "General & Cosmetic Dentistry", "bio": "Leads comprehensive dental care with a focus on painless, patient-first treatment.", "photo": "/images/doctors/lead-dentist.jpg", "socials": {} },
-    { "id": 2, "name": "Orthodontist", "qualification": "", "registrationNumber": "", "specialization": "Braces & Clear Aligners", "bio": "Specializes in creating confident, well-aligned smiles for patients of every age.", "photo": "/images/doctors/orthodontist.jpg", "socials": {} },
-    { "id": 3, "name": "Endodontist", "qualification": "", "registrationNumber": "", "specialization": "Root Canal Specialist", "bio": "Expert in advanced, single-sitting root canal therapy with a gentle approach.", "photo": "/images/doctors/endodontist.jpg", "socials": {} },
-    { "id": 4, "name": "Pediatric Dentist", "qualification": "", "registrationNumber": "", "specialization": "Child & Family Dentistry", "bio": "Gentle, friendly care that makes dental visits stress-free for children and families.", "photo": "/images/doctors/pediatric-dentist.jpg", "socials": {} }
+    { "id": 1, "name": "Lead Dentist", "qualification": "BDS, MDS", "registrationNumber": "", "specialization": "General & Cosmetic Dentistry", "bio": "Leads comprehensive dental care with a focus on painless, patient-first treatment.", "photo": "/images/doctors/lead-dentist.jpg", "socials": {} },
+    { "id": 2, "name": "Orthodontist", "qualification": "BDS, MDS (Orthodontics)", "registrationNumber": "", "specialization": "Braces & Clear Aligners", "bio": "Specializes in creating confident, well-aligned smiles for patients of every age.", "photo": "/images/doctors/orthodontist.jpg", "socials": {} },
+    { "id": 3, "name": "Endodontist", "qualification": "BDS, MDS (Conservative Dentistry & Endodontics)", "registrationNumber": "", "specialization": "Root Canal Specialist", "bio": "Expert in advanced, single-sitting root canal therapy with a gentle approach.", "photo": "/images/doctors/endodontist.jpg", "socials": {} },
+    { "id": 4, "name": "Pediatric Dentist", "qualification": "BDS, MDS (Pedodontics)", "registrationNumber": "", "specialization": "Child & Family Dentistry", "bio": "Gentle, friendly care that makes dental visits stress-free for children and families.", "photo": "/images/doctors/pediatric-dentist.jpg", "socials": {} }
   ],
   "testimonials": [
     { "id": 1, "name": "Khushi Chauhan", "quote": "I visited Advance Dental Care for my treatment, and I had a great experience. The doctor and his team was very friendly and made me feel comfortable throughout the process. I highly recommend Advance Dental Care to anyone looking for dental care in a friendly and professional environment.", "source": "Google Review", "date": "4 months ago", "avatar": null },
@@ -171,9 +171,9 @@
     ]
   },
   "blog": [
-    { "id": 1, "title": "Root Canal Treatment: Myths vs Reality", "excerpt": "Worried a root canal will hurt? Here's how modern, painless rotary endodontics has changed the experience completely.", "date": "Jul 15, 2026", "author": "Advanced Dental Lounge Team", "comments": 5, "image": "https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=600&h=400&fit=crop" },
-    { "id": 2, "title": "Braces or Clear Aligners? Choosing the Right Orthodontic Treatment", "excerpt": "A practical comparison of metal braces, ceramic braces, and clear aligners to help you pick what fits your life and budget.", "date": "Jun 28, 2026", "author": "Advanced Dental Lounge Team", "comments": 3, "image": "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=600&h=400&fit=crop" },
-    { "id": 3, "title": "What a Smile Makeover Really Involves", "excerpt": "From whitening to veneers to alignment — a step-by-step look at how we plan a complete smile transformation.", "date": "Jun 10, 2026", "author": "Advanced Dental Lounge Team", "comments": 8, "image": "https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=600&h=400&fit=crop" }
+    { "id": 1, "title": "Root Canal Treatment: Myths vs Reality", "excerpt": "Worried a root canal will hurt? Here's how modern, painless rotary endodontics has changed the experience completely.", "date": "Jul 15, 2026", "author": "Advanced Dental Lounge Team", "comments": 5, "image": "/images/gallery/digital-xray.jpg" },
+    { "id": 2, "title": "Braces or Clear Aligners? Choosing the Right Orthodontic Treatment", "excerpt": "A practical comparison of metal braces, ceramic braces, and clear aligners to help you pick what fits your life and budget.", "date": "Jun 28, 2026", "author": "Advanced Dental Lounge Team", "comments": 3, "image": "/images/clinic/about-clinic.jpg" },
+    { "id": 3, "title": "What a Smile Makeover Really Involves", "excerpt": "From whitening to veneers to alignment — a step-by-step look at how we plan a complete smile transformation.", "date": "Jun 10, 2026", "author": "Advanced Dental Lounge Team", "comments": 8, "image": "/images/gallery/treatment-rooms.jpg" }
   ],
   "navigation": [
     { "label": "Home", "href": "#home" },

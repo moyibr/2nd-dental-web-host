@@ -92,8 +92,14 @@ export default function AppointmentForm() {
   };
 
   if (submitted) {
+    // Note: intentionally NOT using the scroll-reveal ref/class here. This card
+    // replaces the form in place, in a section the visitor is already looking
+    // at (not something they scroll to) — and useScrollAnimation's
+    // IntersectionObserver only attaches once per mount, so reusing it on this
+    // conditionally-swapped-in node would never fire, leaving the confirmation
+    // stuck at opacity:0 (verified while testing the form during this audit).
     return (
-      <div ref={ref} className="scroll-hidden bg-primary text-white p-6 sm:p-8 md:p-12 rounded-2xl text-center">
+      <div className="bg-primary text-white p-6 sm:p-8 md:p-12 rounded-2xl text-center">
         <div className="text-5xl mb-4">✅</div>
         <h3 className="text-2xl font-bold mb-2">Appointment Requested!</h3>
         <p className="text-white/80 mb-6">We&apos;ll confirm your appointment shortly via phone or email.</p>
