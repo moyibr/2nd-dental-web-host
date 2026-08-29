@@ -15,8 +15,6 @@ dental-clinic/
 ├── frontend/     ← the website (React + Vite). Everything a visitor sees.
 ├── backend/      ← the appointment API (Express). Nothing else.
 ├── config/       ← shared client data (see below). NOT frontend or backend code.
-├── mo-yakub-portfolio/  ← standalone Next.js portfolio site. Unrelated to the
-│                          template: its own app, deps and deploy. See its README.
 ├── README.md, ONBOARDING_CHECKLIST.md, CLIENT_INTAKE_CHECKLIST.md
 ```
 
